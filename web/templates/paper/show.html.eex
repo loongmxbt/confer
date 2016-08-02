@@ -1,0 +1,56 @@
+<main class="main-content">
+  <div class="widget">
+    <div class="title">
+      论文详情
+    </div>
+
+    <div class="content">
+      <p>
+        论文标题：<%= @paper.title %>
+      </p>
+      <p>
+        论文分类：<%= @paper.topic.name %>
+      </p>
+      <p>
+        下载链接：<a href="<%= exfile_url(@conn, @paper.file) %>" download><%= @paper.title %></a>
+      </p>
+      <p>
+        评阅详情：<span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
+      </p>
+      <table class="table">
+        <thead>
+          <tr><th width="20%">评阅意见</th><th>内容详情</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="label label-success">Pass</span></th>
+            <td>
+              1.
+              2.
+              3.
+            </td>
+          </tr>
+          <tr>
+            <th><span class="label label-primary">Waiting</span></th>
+            <td>
+              1.
+              2.
+              3.
+            </td>
+          </tr>
+          <tr>
+            <th><span class="label label-warning">Denied</span></th>
+            <td>
+              1.
+              2.
+              3.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <%= link "编辑", to: paper_path(@conn, :edit, @paper) %>
+    <%= link "返回", to: paper_path(@conn, :index) %>
+  </div>
+</main>

@@ -1,0 +1,123 @@
+body {
+  color: #505050;
+  line-height: 1.75em;
+  background: #ebebeb;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+.main-header {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+
+.main-menu {
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #ebebeb;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e1e1e1;
+  font-size: 1.1em;
+}
+
+
+
+.sidebar .widget {
+  background: #ffffff;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+}
+
+.widget .title {
+  font-size: 20px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.widget .title:after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  background: #f4645f;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+
+.main-content {
+  margin-bottom: 30px;
+}
+
+.main-content .widget {
+  background: #ffffff;
+  padding: 20px 30px;
+}
+
+.main-footer {
+  background: #202020;
+  padding: 35px 0 0;
+  color: #959595;
+}
+
+.main-footer .widget {
+  padding: 0px 30px;
+  margin-bottom: 30px;
+}
+
+.copyright {
+  background: #111;
+  font-size: 13px;
+  text-align: center;
+  color: #555555;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid #303030;
+}
+
+a {
+  color: #f4645f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f4645f;
+}
+
+a:focus {
+  color: #f4645f;
+}
+
+.pattern-red {
+  background-image: url("/images/pattern-red.svg");
+}
+
+.menu-link {
+  padding-top: 13px;
+}
+
+/* Phoenix flash messages */
+.alert:empty { display: none; }
+
+/* Phoenix inline forms in links and buttons */
+form.link, form.button {
+  display: inline;
+}
+
+.info {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.info ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

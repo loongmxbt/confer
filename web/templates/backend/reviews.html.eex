@@ -1,0 +1,44 @@
+<h2>评阅总览</h2>
+<div class="row">
+  <div class="col-md-8">
+    <h3>论文总览</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>论文ID</th>
+          <th width=50%>论文标题</th>
+          <th>论文分类</th>
+          <th>评阅人1</th>
+          <th>评阅人2</th>
+          <th>评阅人3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for paper <- @papers do %>
+        <tr>
+          <td><%= paper.id %></td><td><%= paper.title %></td><td><%= paper.topic.name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-4">
+    <h3>教授总览</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>姓名</th><th>邮箱</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for professor <- @professors do %>
+        <tr>
+          <td><%= professor.name %></td>
+          <td><%= professor.email %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

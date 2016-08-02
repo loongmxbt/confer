@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default main-menu">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CNETD2016</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">首页</a></li>
+        <li><a href="/page/organization">组织结构</a></li>
+        <li><a href="/page/dates">重要日期</a></li>
+        <li><a href="/page/meeting">参会注册</a></li>
+        <li><a href="/page/travel">交通住宿</a></li>
+        <li><a href="/page/contact">联系我们</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <%= if Coherence.current_user(@conn) do %>
+        <li><a href="/user"><%= Coherence.current_user(@conn).name %></a></li>
+        <li><div class="menu-link"><%= link "退出登录", to: session_path(@conn, :delete, @current_user), method: "delete" %></div></li>
+          <%= if Coherence.current_user(@conn).role_id == 3 do %>
+          <li><a href="/backend">后台</a></li>
+          <% end %>
+          <%= if Coherence.current_user(@conn).role_id == 2 do %>
+          <li><a href="/reviews">评阅</a></li>
+          <% end %>
+        <% else %>
+        <li><a href="/sessions/new">登录</a></li>
+        <li><a href="/registrations/new">注册</a></li>
+        <% end %>
+      </ul>
+
+      <!-- <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="输入搜索内容">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form> -->
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

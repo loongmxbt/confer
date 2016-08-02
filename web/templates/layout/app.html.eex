@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= gettext "Site Title" %></title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= render "header.html" %>
+    <%= render "menu.html", assigns %>
+
+    <div class="errors">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <%= render "sidebar.html" %>
+        </div>
+        <div class="col-md-8">
+          <%= render @view_module, @view_template, assigns %>
+        </div>
+      </div>
+    </div>
+
+    <%= render "footer.html" %>
+    <script src="<%= static_path(@conn, "/js/jquery.min.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/bootstrap.min.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

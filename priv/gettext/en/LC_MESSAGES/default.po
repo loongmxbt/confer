@@ -1,0 +1,75 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+
+#: web/templates/coherence/layout/app.html.eex:10
+#: web/templates/layout/app.html.eex:10
+msgid "Site Title"
+msgstr "Engineer Thermo Physics"
+
+#: web/templates/coherence/registration/new.html.eex:42
+msgid "Password Confirmation"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:16
+msgid "Name"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:36
+#: web/templates/coherence/session/new.html.eex:17
+msgid "Password"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:49
+#: web/templates/coherence/session/new.html.eex:31
+msgid "Cancel"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:30
+#: web/views/coherence/coherence_view_helpers.ex:16
+msgid "Login"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:3
+msgid "Login Account"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:48
+msgid "Register"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:3
+msgid "Register Account"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:24
+msgid "Remember Me"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:12
+msgid "Forget Password?"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:15
+msgid "Invite"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:17
+msgid "Logout"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:14
+msgid "Need Registration?"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:13
+msgid "Send Unlock Email"
+msgstr ""

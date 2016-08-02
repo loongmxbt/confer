@@ -1,0 +1,33 @@
+<main class="main-content">
+  <div class="widget">
+    <div class="title">我的评阅</div>
+
+<ul>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @review.status_id %>
+  </li>
+
+  <li>
+    <strong>Paper:</strong>
+    <%= @review.paper_id %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @review.user_id %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @review.content %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: review_path(@conn, :edit, @review) %>
+<%= link "Back", to: review_path(@conn, :index) %>
+</div>
+</div>
+</main>

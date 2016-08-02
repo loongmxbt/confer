@@ -1,0 +1,71 @@
+<h1>后台管理</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">页面管理</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          Page是单独页面，需要指定slug(about/contact)等
+        </p>
+        <ul>
+          <li><a href="/backend/admin/pages">所有页面</a></li>
+          <li><a href="/backend/admin/pages/new">创建页面</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">文章管理</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          Post是信息发布，一般为通知等信息
+        </p>
+        <ul>
+          <li><a href="/backend/admin/posts">所有文章</a></li>
+          <li><a href="/backend/admin/posts/new">新建文章</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">后台纵览</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          后台Admin查看所有数据表，评阅系统分配论文至教授
+        </p>
+        <ul>
+          <li><a href="/backend/admin">后台 Admin</a></li>
+          <li><a href="/backend/reviews">评阅系统</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">邮箱管理</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          邮箱系统发送待评阅论文至教授邮箱
+        </p>
+        <ul>
+          <li><a href="/backend/mailbox">本地 Mailbox</a></li>
+          <li><a href="#">搜狐 SendCloud</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

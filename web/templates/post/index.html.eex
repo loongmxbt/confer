@@ -1,0 +1,22 @@
+<main class="main-content">
+  <div class="widget">
+    <div class="title">所有通知</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>标题</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for post <- @posts do %>
+        <tr>
+          <td><%= post.inserted_at %></td>
+          <td><a href="<%= post_path(@conn, :show, post) %>"><%= post.title %></a></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</main>

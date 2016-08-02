@@ -1,0 +1,76 @@
+## This file is a PO Template file.
+##
+## `msgid`s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run `mix gettext.extract` to bring this file up to
+## date. Leave `msgstr`s empty as changing them here as no
+## effect: edit them in PO (`.po`) files instead.
+msgid ""
+msgstr ""
+"Language: INSERT LANGUAGE HERE\n"
+
+#: web/templates/coherence/layout/app.html.eex:10
+#: web/templates/layout/app.html.eex:10
+msgid "Site Title"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:42
+msgid "Password Confirmation"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:16
+msgid "Name"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:36
+#: web/templates/coherence/session/new.html.eex:17
+msgid "Password"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:49
+#: web/templates/coherence/session/new.html.eex:31
+msgid "Cancel"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:30
+#: web/views/coherence/coherence_view_helpers.ex:16
+msgid "Login"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:3
+msgid "Login Account"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:48
+msgid "Register"
+msgstr ""
+
+#: web/templates/coherence/registration/new.html.eex:3
+msgid "Register Account"
+msgstr ""
+
+#: web/templates/coherence/session/new.html.eex:24
+msgid "Remember Me"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:12
+msgid "Forget Password?"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:15
+msgid "Invite"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:17
+msgid "Logout"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:14
+msgid "Need Registration?"
+msgstr ""
+
+#: web/views/coherence/coherence_view_helpers.ex:13
+msgid "Send Unlock Email"
+msgstr ""

@@ -1,0 +1,18 @@
+<main class="main-content">
+  <div class="widget">
+    <h2>创建论文</h2>
+
+    <div class="info bg-info">
+      <ul>
+        <li>上传文件格式为 .doc / .docx / .pdf</li>
+        <li>上传文件大小不超过 20 MB</li>
+      </ul>
+    </div>
+
+    <%= render "form.html", changeset: @changeset,
+                            topics: @topics,
+                            action: paper_path(@conn, :create) %>
+
+    <%= link "返回", to: paper_path(@conn, :index) %>
+  </div>
+</main>

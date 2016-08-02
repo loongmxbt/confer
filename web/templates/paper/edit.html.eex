@@ -1,0 +1,11 @@
+<main class="main-content">
+  <div class="widget">
+    <h2>编辑论文</h2>
+
+    <%= render "form.html", changeset: @changeset,
+    topics: @topics,
+    action: paper_path(@conn, :update, @paper) %>
+
+    <%= link "Back", to: paper_path(@conn, :index) %>
+  </div>
+</main>

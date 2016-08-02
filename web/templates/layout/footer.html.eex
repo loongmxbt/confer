@@ -1,0 +1,64 @@
+<footer class="main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="widget">
+          <h4 class="title">最新通知</h4>
+          <div class="content recent-post">
+            <div class="recent-single-post">
+              <a href="/post/laravel-turns-five/" class="post-title">会议投稿截止日期延长至6月30日</a>
+              <div class="date">2016年6月12日</div>
+            </div>
+            <div class="recent-single-post">
+              <a href="/post/2016-ban-laravel-xi-lie-ru-men-jiao-cheng-yi/" class="post-title">2016中国工程热物理学会燃烧学学术年会通知</a>
+              <div class="date">2016年6月6日</div>
+            </div>
+            <div class="recent-single-post">
+              <a href="/post/2016-ban-laravel-xi-lie-ru-men-jiao-cheng-er/" class="post-title">Call for papers (for foreign attendees)</a>
+              <div class="date">2016年6月6日</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="widget">
+          <h4 class="title">标签云</h4>
+          <div class="content tag-cloud">
+            <a href="/tag/laravel/">Laravel</a>
+            <a href="/tag/getting-started-with-laravel/">Laravel入门教程</a>
+            <a href="/tag/laravel-5/">Laravel 5</a>
+            <a href="/tag/laravel-5-2/">Laravel 5.2</a>
+            <a href="/tag/eloquent/">Eloquent</a>
+            <a href="/tag/xin-ban-ben-fa-bu/">新版本发布</a>
+            <a href="/tag/laravel-5-1/">Laravel 5.1</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="widget">
+          <h4 class="title">合作伙伴</h4>
+          <div class="content tag-cloud friend-links">
+            <a href="http://www.bootcss.com" title="Bootstrap中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'bootcsscom'])" target="_blank">Bootstrap中文网</a>
+            <a href="http://www.bootcdn.cn" title="开放CDN服务" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'bootcdncn'])" target="_blank">开放CDN服务</a>
+            <a href="http://www.gruntjs.net" title="Grunt中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'gruntjsnet'])" target="_blank">Grunt中文网</a>
+            <a href="http://www.gulpjs.com.cn/" title="Gulp中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'gulpjscomcn'])" target="_blank">Gulp中文网</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <span>Copyright © <a href="http://www.golaravel.com/">工程热物理</a></span> |
+        <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span> |
+        <span>京公网安备11010802014853</span>
+      </div>
+    </div>
+  </div>
+</div>

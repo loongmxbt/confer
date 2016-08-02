@@ -1,0 +1,38 @@
+<aside class="sidebar">
+
+  <div class="widget">
+    <div class="title">快速导航</div>
+    <div class="content side-menu">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><a href="/page/topics"><i class="fa fa-book" aria-hidden="true"></i> 会议专题</a></li>
+        <li role="presentation"><a href="/papers"><i class="fa fa-paper-plane" aria-hidden="true"></i> 会议投稿</a></li>
+        <li role="presentation"><a href="/page/calendar"><i class="fa fa-calendar" aria-hidden="true"></i> 会议日程</a></li>
+        <li role="presentation"><a href="/posts"><i class="fa fa-info-circle" aria-hidden="true"></i> 会议通知</a></li>
+        <li role="presentation"><a href="/page/reports"><i class="fa fa-flag" aria-hidden="true"></i> 特邀报告</a></li>
+        <li role="presentation"><a href="/page/downloads"><i class="fa fa-download" aria-hidden="true"></i> 文档下载</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="title">主办单位</div>
+    <div class="content">
+      <div class="host">
+        <img src="http://clbs.escience.cn/doc/57046872e4b039f10ac92a0d.png" height="125" width="140">
+      </div>
+      <div class="host">
+        <img src="http://clbs.escience.cn/doc/56ea3572e4b07669127ecbe6.png" height="125" width="140">
+      </div>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="title">承办单位</div>
+    <div class="content">
+      <div class="host">
+        <img src="http://clbs.escience.cn/doc/56ea358be4b07669127ecbfd.png" height="125" width="140">
+      </div>
+    </div>
+  </div>
+
+</aside>

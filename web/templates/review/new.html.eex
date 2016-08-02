@@ -1,0 +1,12 @@
+<main class="main-content">
+  <div class="widget">
+    <div class="title">我的评阅</div>
+
+<%= render "form.html", changeset: @changeset,
+                        action: review_path(@conn, :create) %>
+
+<%= link "Back", to: review_path(@conn, :index) %>
+
+</div>
+</div>
+</main>

@@ -1,0 +1,75 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: zh\n"
+
+#: web/templates/coherence/layout/app.html.eex:10
+#: web/templates/layout/app.html.eex:10
+msgid "Site Title"
+msgstr "工程热物理"
+
+#: web/templates/coherence/registration/new.html.eex:42
+msgid "Password Confirmation"
+msgstr "确认密码"
+
+#: web/templates/coherence/registration/new.html.eex:16
+msgid "Name"
+msgstr "用户名"
+
+#: web/templates/coherence/registration/new.html.eex:36
+#: web/templates/coherence/session/new.html.eex:17
+msgid "Password"
+msgstr "输入密码"
+
+#: web/templates/coherence/registration/new.html.eex:49
+#: web/templates/coherence/session/new.html.eex:31
+msgid "Cancel"
+msgstr "取消"
+
+#: web/templates/coherence/session/new.html.eex:30
+#: web/views/coherence/coherence_view_helpers.ex:16
+msgid "Login"
+msgstr "登录"
+
+#: web/templates/coherence/session/new.html.eex:3
+msgid "Login Account"
+msgstr "登录帐号"
+
+#: web/templates/coherence/registration/new.html.eex:48
+msgid "Register"
+msgstr "注册"
+
+#: web/templates/coherence/registration/new.html.eex:3
+msgid "Register Account"
+msgstr "注册帐号"
+
+#: web/templates/coherence/session/new.html.eex:24
+msgid "Remember Me"
+msgstr "记住我"
+
+#: web/views/coherence/coherence_view_helpers.ex:12
+msgid "Forget Password?"
+msgstr "忘记密码？"
+
+#: web/views/coherence/coherence_view_helpers.ex:15
+msgid "Invite"
+msgstr "邀请"
+
+#: web/views/coherence/coherence_view_helpers.ex:17
+msgid "Logout"
+msgstr "登出"
+
+#: web/views/coherence/coherence_view_helpers.ex:14
+msgid "Need Registration?"
+msgstr "需要注册？"
+
+#: web/views/coherence/coherence_view_helpers.ex:13
+msgid "Send Unlock Email"
+msgstr "发送解锁邮件"

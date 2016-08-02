@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="<%= static_path(@conn, "/css/simditor.css") %>">
+<script src="<%= static_path(@conn, "/js/simditor.min.js") %>"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  var editor = new Simditor({
+    textarea: $('textarea'),
+    defaultImage: 'http://temp.im/150x150',
+    toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+  });
+
+})
+</script>

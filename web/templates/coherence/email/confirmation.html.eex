@@ -1,0 +1,14 @@
+<div>
+  <p>您好 <%= @name %>!<p>
+  <p>Hello <%= @name %>!<p>
+  <p>
+    您的账户已经准备就绪，点击下方链接完成认证！
+  </p>
+  <p>
+    Your new account is almost ready. Click the link below to confirm you new account.
+  </p>
+  <p>
+    <a href="<%= @url %>">认证帐号 Confirm my Account</a>
+  </p>
+  <p>Thank you!</p>
+</div>
