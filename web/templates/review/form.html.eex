@@ -12,6 +12,17 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :status_id, "Status", class: "control-label" %>
+
+
+    <%= for status <- @statuses do %>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="<%= status.id %>" value="<%= status.name %>"> <%= status.name %>
+      </label>
+    <% end %>
+  </div>
+
+  <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

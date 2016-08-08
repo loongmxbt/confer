@@ -2,32 +2,35 @@
   <div class="widget">
     <div class="title">我的评阅</div>
 
-<ul>
+    <ul>
+      <li>
+        <strong>论文状态:</strong>
+        <%= @review.status.name %>
+      </li>
 
-  <li>
-    <strong>Status:</strong>
-    <%= @review.status_id %>
-  </li>
+      <li>
+        <strong>论文标题:</strong>
+        <%= @paper.title %>
+      </li>
 
-  <li>
-    <strong>Paper:</strong>
-    <%= @review.paper_id %>
-  </li>
+      <li>
+        <strong>论文分类:</strong>
+        <%= @paper.topic.name %>
+      </li>
 
-  <li>
-    <strong>User:</strong>
-    <%= @review.user_id %>
-  </li>
+      <li>
+        <strong>上传者:</strong>
+        <%= @paper.user.name %>
+      </li>
 
-  <li>
-    <strong>Content:</strong>
-    <%= @review.content %>
-  </li>
+      <li>
+        <strong>评阅内容:</strong>
+        <%= @review.content %>
+      </li>
+    </ul>
 
-</ul>
-
-<%= link "Edit", to: review_path(@conn, :edit, @review) %>
-<%= link "Back", to: review_path(@conn, :index) %>
-</div>
+    <%= link "编辑", to: review_path(@conn, :edit, @review) %> -
+    <%= link "返回", to: review_path(@conn, :index) %>
+  </div>
 </div>
 </main>

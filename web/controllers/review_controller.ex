@@ -4,6 +4,7 @@ defmodule Confer.ReviewController do
   # Review Controller is for professor
   alias Confer.Review
   alias Confer.Paper
+  alias Confer.Status
 
   def action(conn, _) do
     apply(__MODULE__, action_name(conn), [conn, conn.params, conn.assigns.current_user])
@@ -14,7 +15,7 @@ defmodule Confer.ReviewController do
   end
 
   def index(conn, _params, user) do
-    reviews = Repo.all(user_reviews(user)) |> Repo.preload(:confer) |> Repo.preload(:status)
+    reviews = Repo.all(user_reviews(user)) |> Repo.preload(:paper) |> Repo.preload(:status)
     # reviews = Repo.all(Review)
     render(conn, "index.html", reviews: reviews)
   end
@@ -38,14 +39,17 @@ defmodule Confer.ReviewController do
   # end
 
   def show(conn, %{"id" => id}, user) do
-    review = Repo.get!(Review, id) |> Repo.preload(:confer) |> Repo.preload(:status)
-    render(conn, "show.html", review: review)
+    review = Repo.get!(Review, id) |> Repo.preload(:status)
+    paper = Repo.get!(Paper, review.paper_id) |> Repo.preload(:user) |> Repo.preload(:topic)
+    render(conn, "show.html", review: review, paper: paper)
   end
 
   def edit(conn, %{"id" => id}, user) do
     review = Repo.get!(Review, id)
+    query = from s in Status, select: {s.name, s.id}
+    statuses = Repo.all(Status)
     changeset = Review.changeset(review)
-    render(conn, "edit.html", review: review, changeset: changeset)
+    render(conn, "edit.html", review: review, statuses: statuses, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "review" => review_params}, user) do

@@ -75,9 +75,9 @@ Page.changeset(%Page{}, %{title: "联系我们", slug: "contact", content: "cont
 
 # Status
 Repo.delete_all Status
-Status.changeset(%Status{}, %{name: "Waiting"}) |> Repo.insert!
-Status.changeset(%Status{}, %{name: "Passed"}) |> Repo.insert!
-Status.changeset(%Status{}, %{name: "Denied"}) |> Repo.insert!
+Status.changeset(%Status{}, %{name: "等待评阅"}) |> Repo.insert!
+Status.changeset(%Status{}, %{name: "评阅通过"}) |> Repo.insert!
+Status.changeset(%Status{}, %{name: "评阅拒绝"}) |> Repo.insert!
 
 
 
