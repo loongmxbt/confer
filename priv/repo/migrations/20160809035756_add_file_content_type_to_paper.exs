@@ -3,7 +3,7 @@ defmodule Confer.Repo.Migrations.AddFileContentTypeToPaper do
 
   def change do
     alter table(:papers) do
-      add :file_content_type, :string
+      add :content_type, :string
     end
   end
 end

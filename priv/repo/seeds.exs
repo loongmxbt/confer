@@ -83,8 +83,9 @@ Status.changeset(%Status{}, %{name: "评阅拒绝"}) |> Repo.insert!
 
 # Add Papers
 # Paper record not added because file is invalid
+# docx may run into zip
 backend = Exfile.Config.get_backend("store")
-{:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Pictures/alpha-go.jpg"})
+{:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Documents/elec-market.pdf"})
 
 Repo.delete_all Paper
 Paper.changeset(%Paper{}, %{title: "热力学第一定律管理员", topic_id: 1, user_id: 1, file: file})

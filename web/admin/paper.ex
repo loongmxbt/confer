@@ -34,7 +34,8 @@ defmodule Confer.ExAdmin.Paper do
       attributes_table do
         row :id
         row :title
-        row :file_content_type
+        row :filename
+        row :content_type
         row :topic
         row :user
         # TODO exfile
