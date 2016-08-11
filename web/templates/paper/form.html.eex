@@ -1,4 +1,11 @@
 <%= form_for @changeset, @action, [multipart: true], fn f -> %>
+
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>上传论文出错！请参见提示信息！</p>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= label f, "论文标题", class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
@@ -14,6 +21,7 @@
   <div class="form-group">
     <%= label f, "上传论文", class: "control-label" %>
     <%= file_input f, :file, class: "form-control" %>
+    <%= error_tag f, :file %>
   </div>
 
   <div class="form-group">

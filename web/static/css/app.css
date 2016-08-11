@@ -103,9 +103,6 @@ a:focus {
   padding-top: 13px;
 }
 
-/* Phoenix flash messages */
-.alert:empty { display: none; }
-
 /* Phoenix inline forms in links and buttons */
 form.link, form.button {
   display: inline;

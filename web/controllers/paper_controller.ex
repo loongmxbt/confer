@@ -2,7 +2,7 @@ defmodule Confer.PaperController do
   use Confer.Web, :controller
 
   alias Confer.Topic
-  alias Confer.User
+  # alias Confer.User
   alias Confer.Paper
 
   plug :load_topics when action in [:new, :create, :edit, :update]

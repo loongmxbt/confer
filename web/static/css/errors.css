@@ -23,6 +23,9 @@
   pointer-events: none;
 }
 
+/* Phoenix flash messages */
+.alert:empty { display: none; }
+
 .alert {
           animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;

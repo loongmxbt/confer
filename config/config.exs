@@ -35,10 +35,10 @@ config :coherence,
   email_from: {"工程热物理", "admin@thermodynamics.cn"},
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :confirmable, :registerable]
 
-# config :coherence, Confer.Coherence.Mailer,
-#   adapter: Swoosh.Adapters.Mailgun,
-#   api_key: "my-api-key",
-#   domain: "avengers.com"
+config :coherence, Confer.Coherence.Mailer,
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: "my-api-key",
+  domain: "avengers.com"
 
 # %% End Coherence Configuration %%
 

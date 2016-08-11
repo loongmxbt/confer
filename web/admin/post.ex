@@ -2,6 +2,8 @@ defmodule Confer.ExAdmin.Post do
   use ExAdmin.Register
 
   register_resource Confer.Post do
+    menu priority: 22, label: "新闻"
+
     index do
       selectable_column
 

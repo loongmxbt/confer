@@ -5,6 +5,7 @@ defmodule Confer.ExAdmin.Paper do
   alias Confer.User
 
   register_resource Confer.Paper do
+    menu priority: 31, label: "论文"
 
     index do
       selectable_column
@@ -33,6 +34,7 @@ defmodule Confer.ExAdmin.Paper do
       attributes_table do
         row :id
         row :title
+        row :file_content_type
         row :topic
         row :user
         # TODO exfile

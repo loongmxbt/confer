@@ -40,7 +40,8 @@ defmodule Confer.Mixfile do
      {:cowboy, "~> 1.0"},
      {:coherence, "~> 0.1"},
      {:ex_admin, github: "smpallen99/ex_admin"},
-     {:exfile, "~> 0.3.0"}]
+    #  {:exfile, "~> 0.3.0"}]
+     {:exfile, github: "keichan34/exfile"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

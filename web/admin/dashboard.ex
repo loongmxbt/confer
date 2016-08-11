@@ -2,7 +2,7 @@ defmodule Confer.ExAdmin.Dashboard do
   use ExAdmin.Register
 
   register_page "Dashboard" do
-    menu priority: 1, label: "Dashboard"
+    menu priority: 1, label: "导航"
     content do
       div ".blank_slate_container#dashboard_default_message" do
         span ".blank_slate" do

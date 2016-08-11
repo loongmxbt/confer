@@ -55,6 +55,7 @@ defmodule Confer.ReviewController do
   def update(conn, %{"id" => id, "review" => review_params}, user) do
     review = Repo.get!(Review, id)
     changeset = Review.changeset(review, review_params)
+    # TODO
 
     case Repo.update(changeset) do
       {:ok, review} ->
