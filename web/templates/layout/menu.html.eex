@@ -24,7 +24,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <%= if Coherence.current_user(@conn) do %>
-        <li><a href="/user"><%= Coherence.current_user(@conn).name %></a></li>
+        <li><a href="/papers"><%= Coherence.current_user(@conn).name %></a></li>
         <li><div class="menu-link"><%= link "退出登录", to: session_path(@conn, :delete, @current_user), method: "delete" %></div></li>
           <%= if Coherence.current_user(@conn).role_id == 3 do %>
           <li><a href="/backend">后台</a></li>

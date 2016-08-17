@@ -10,7 +10,7 @@ defmodule Confer.PageController do
             order_by: [desc: p.inserted_at]
     recent_posts = Repo.all(query)
     # welcome text, email, address, etc
-    welcome = Repo.get(Post, 1)
+    welcome = Repo.get_by(Page, slug: "welcome")
     address = Repo.get_by(Info, slug: "address")
     phone = Repo.get_by(Info, slug: "phone")
     email = Repo.get_by(Info, slug: "email")

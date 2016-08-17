@@ -1,5 +1,9 @@
 <h1>后台管理</h1>
 
+<p>
+  当前管理员帐号：<%= Coherence.current_user(@conn).name %> | <a href="/">返回首页</a>
+</p>
+
 <div class="row">
   <div class="col-md-6">
     <div class="panel panel-default">
@@ -20,15 +24,50 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">文章管理</h3>
+        <h3 class="panel-title">通知管理</h3>
       </div>
       <div class="panel-body">
         <p>
           Post是信息发布，一般为通知等信息
         </p>
         <ul>
-          <li><a href="/backend/admin/posts">所有文章</a></li>
-          <li><a href="/backend/admin/posts/new">新建文章</a></li>
+          <li><a href="/backend/admin/posts">所有通知</a></li>
+          <li><a href="/backend/admin/posts/new">新建通知</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">信息管理</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          信息一般为主页上固定内容，如欢迎辞，email，联系电话，举办地等
+        </p>
+        <ul>
+          <li><a href="/backend/admin/infos">所有信息</a></li>
+          <li><a href="/backend/admin/infos/new">创建信息</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">论文管理</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          论文为用户投稿论文，可以指定评阅人
+        </p>
+        <ul>
+          <li><a href="/backend/admin/papers">所有论文</a></li>
+          <li><a href="/backend/admin/reviews">所有评阅</a></li>
         </ul>
       </div>
     </div>
