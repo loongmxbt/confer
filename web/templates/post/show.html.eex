@@ -4,6 +4,7 @@
     <div class="content">
       <%= raw @post.content %>
 
+      <hr>
       <%= link "返回", to: post_path(@conn, :index) %>
     </div>
   </div>

@@ -10,5 +10,6 @@ defmodule Confer.Repo.Migrations.CreatePage do
       timestamps()
     end
 
+    create unique_index(:pages, [:slug])
   end
 end

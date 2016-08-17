@@ -68,7 +68,8 @@ config :ex_admin,
     Confer.ExAdmin.Paper,
     Confer.ExAdmin.Page,
     Confer.ExAdmin.Status,
-    Confer.ExAdmin.Review
+    Confer.ExAdmin.Review,
+    Confer.ExAdmin.Info
   ]
 
 # ExFile

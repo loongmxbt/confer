@@ -7,12 +7,15 @@ defmodule Confer.Auth do
 
   def auth_role(conn, auth_role) do
     current_user = conn.assigns.current_user
-    user_role = Repo.get(Role, current_user.role_id).name
-    if current_user && user_role == auth_role do
-      conn
+
+    if current_user do
+      user_role = Repo.get(Role, current_user.role_id).name
+      if user_role == auth_role do
+        conn
+      end
     else
       conn
-      |> put_flash(:error, "You must have the right role! Current role is: " <> user_role)
+      |> put_flash(:error, "You must have the right role!")
       |> redirect(to: Helpers.page_path(conn, :index))
       |> halt()
     end

@@ -5,7 +5,7 @@ defmodule Confer.Router do
 
   forward "/attachments", Exfile.Router
 
-  pipeline :public do
+  pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
@@ -14,13 +14,13 @@ defmodule Confer.Router do
     plug Coherence.Authentication.Session
   end
 
-  pipeline :browser do
+  pipeline :protected do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Coherence.Authentication.Session, login: true
+    plug Coherence.Authentication.Session, protected: true
   end
 
   pipeline :auth_admin do
@@ -41,18 +41,18 @@ defmodule Confer.Router do
 
   # Coherence
   scope "/" do
-    pipe_through :public
-    coherence_routes :public
+    pipe_through :browser
+    coherence_routes
   end
 
   scope "/" do
-    pipe_through :browser
-    coherence_routes :private
+    pipe_through :protected
+    coherence_routes :protected
   end
 
   # Public pages and posts
   scope "/", Confer do
-    pipe_through :public
+    pipe_through :browser
     get "/", PageController, :index
     get "/page/:slug", PageController, :show
     resources "/posts", PostController, only: [:index, :show]
@@ -60,36 +60,34 @@ defmodule Confer.Router do
 
   # Login user paper submit
   scope "/", Confer do
-    pipe_through :browser
+    pipe_through :protected
     resources "/papers", PaperController # Login User CRUD paper
   end
 
   # Login professor role for reviews
   scope "/", Confer do
-    pipe_through [:browser, :auth_professor]
+    pipe_through [:protected, :auth_professor]
     resources "/reviews", ReviewController # Professor CRUD review
   end
 
   # Backend Admin Role: God View and Reviews
   scope "/backend", Confer do
-    pipe_through [:browser, :backend_layout, :auth_admin] # protected
+    pipe_through [:protected, :backend_layout, :auth_admin] # protected
     get "/", BackendController, :index
     get "/reviews", BackendController, :index_reviews
   end
 
   scope "/backend/admin", ExAdmin do
-    pipe_through [:browser, :auth_admin]
+    pipe_through [:protected, :auth_admin]
     admin_routes
   end
 
   # Swoosh mailbox
   if Mix.env == :dev do
     scope "/backend" do
-      pipe_through [:browser, :auth_admin]
+      pipe_through [:protected, :auth_admin]
       forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/backend/mailbox"]
     end
   end
-
-
 
 end

@@ -5,8 +5,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th>日期</th>
-          <th>标题</th>
+          <th width="30%">发布日期</th>
+          <th>通知标题</th>
         </tr>
       </thead>
       <tbody>

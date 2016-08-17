@@ -7,6 +7,9 @@ alias Confer.Page
 alias Confer.Status
 alias Confer.Review
 alias Confer.Paper
+alias Confer.Post
+alias Confer.Info
+
 
 # Add Roles
 Repo.delete_all Role
@@ -37,9 +40,9 @@ User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", passw
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 User.changeset(%User{}, %{name: "test1", email: "test1@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-User.changeset(%User{}, %{name: "test2", email: "test2@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
+User.changeset(%User{}, %{name: "test2", email: "test2@163.com", password: "test555", password_confirmation: "test555"})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-User.changeset(%User{}, %{name: "test3", email: "test3@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
+User.changeset(%User{}, %{name: "test3", email: "test3@163.com", password: "test555", password_confirmation: "test555"})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
 
@@ -108,4 +111,38 @@ Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 4})
 Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 2})
 |> Repo.insert!
 Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 3})
+|> Repo.insert!
+
+# Posts
+welcome_text = "<p>
+  伴随着火的使用，人类文明逐渐走出黑暗，迈向光明。燃烧渗透在人们日常生活的各个方面，人类对燃烧的探索也从未停止。燃烧学的发展进步，为解决能源和环境危机、开展火灾防治等提供了重要的理论指导，也为人类在能源、环境、火灾、国防及空间探索等诸多领域中的活动提供了科学依据。
+</p>
+<p>
+  随着国家自然科学基金委和其它基础研究项目的持续投入，我国在燃烧学领域的研究取得了长足进展，解决了众多科学难题。我国燃烧界具有国际影响力的专家学者队伍也在不断壮大，我国学者在国际燃烧领域权威期刊《Combustion and Flame》和《Proceedings of the Combustion Institute》上发表的论文数居世界第二位，为国际燃烧学的发展进步做出了卓越贡献。
+</p>
+<p>
+  根据中国工程热物理学会燃烧学专业委员会的安排，2016年中国工程热物理学会燃烧学学术年会将于2016年10月21-23日在安徽马鞍山举行。会议将围绕燃烧特性与层流火焰，化学反应动力学，湍流火焰和燃烧过程的数值分析，喷雾与液滴燃烧，燃烧测试与诊断技术，爆轰、爆炸和超音速燃烧，火灾科学与技术，燃烧污染物控制，煤和生物质的燃烧与气化，内燃机和燃气轮机燃烧，新型燃烧技术等11个专题开展交流，旨在展示我国燃烧领域学者的新成果，碰撞出燃烧研究的新火花，挑战遇到的新问题。大会由国家自然科学基金委工程与材料科学部工程科学三处和中国工程热物理学会燃烧学分会主办，安徽工业大学承办。会议将由大会邀请报告、专题报告、基金进展报告以及各专题的分组报告构成。
+</p>"
+
+# No.1 post is welcome_text
+Repo.delete_all Post
+Post.changeset(%Post{}, %{title: "组委会致欢迎辞", content: welcome_text})
+|> Repo.insert!
+Post.changeset(%Post{}, %{title: "通知1", content: "通知内容1通知内容1通知内容1"})
+|> Repo.insert!
+Post.changeset(%Post{}, %{title: "通知2", content: "通知内容2通知内容2通知内容2"})
+|> Repo.insert!
+Post.changeset(%Post{}, %{title: "通知3", content: "通知内容3通知内容3通知内容3"})
+|> Repo.insert!
+
+# Info
+Repo.delete_all Info
+
+Info.changeset(%Info{}, %{name: "举办地址", slug: "address", content: "华北电力大学"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "联系电话", slug: "phone", content: "010-88888888"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "官方邮箱", slug: "email", content: "admin@thermophysics.cn"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "微信公众号", slug: "wechat", content: "http://placehold.it/150x150"})
 |> Repo.insert!
