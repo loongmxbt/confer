@@ -36,9 +36,16 @@ config :coherence,
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :confirmable, :registerable]
 
 config :coherence, Confer.Coherence.Mailer,
-  adapter: Swoosh.Adapters.Mailgun,
-  api_key: "my-api-key",
-  domain: "avengers.com"
+  adapter: Swoosh.Adapters.SMTP,
+  relay: "smtp.163.com",
+  username: "admin@thermophysics.cn",
+  password: "sZy.1014",
+  tls: :always,
+  auth: :always
+  # dkim: [
+  #   s: "default", d: "domain.com",
+  #   private_key: {:pem_plain, File.read!("priv/keys/domain.private")}
+  # ]
 
 # %% End Coherence Configuration %%
 
