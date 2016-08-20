@@ -20,8 +20,8 @@ Academic Conference Management System
 
 
 ## TODO
-  * 权限系统 role check ---
-  * 邮件系统 swoosh smtp
-  * 文件上传 exfile ---
+  * 权限系统 role check --- 完成
+  * 邮件系统 swoosh smtp --- 使用网易免费企业邮箱
+  * 文件上传 exfile --- 替换为arc
   * https
   * 部署

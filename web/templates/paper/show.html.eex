@@ -9,10 +9,10 @@
         论文标题：<%= @paper.title %>
       </p>
       <p>
-        论文分类：<%= @paper.topic.name %>
+        论文分类：<%= @topic.name %>
       </p>
       <p>
-        下载链接：<a href="<%= exfile_url(@conn, @paper.file) %>" download><%= @paper.title %></a>
+        论文预览：<a href="<%= exfile_path(@paper.file) %>" target="_blank"><%= @paper.title %></a>
       </p>
       <p>
         评阅详情：<span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
@@ -22,30 +22,14 @@
           <tr><th width="20%">评阅意见</th><th>内容详情</th></tr>
         </thead>
         <tbody>
+          <%= for review <- @reviews do %>
           <tr>
-            <th><span class="label label-success">Pass</span></th>
+            <th><%= raw review_label(review.status_id) %></th>
             <td>
-              1.
-              2.
-              3.
+              <%= review.content %>
             </td>
           </tr>
-          <tr>
-            <th><span class="label label-primary">Waiting</span></th>
-            <td>
-              1.
-              2.
-              3.
-            </td>
-          </tr>
-          <tr>
-            <th><span class="label label-warning">Denied</span></th>
-            <td>
-              1.
-              2.
-              3.
-            </td>
-          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

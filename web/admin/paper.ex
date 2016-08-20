@@ -38,6 +38,7 @@ defmodule Confer.ExAdmin.Paper do
         row :content_type
         row :topic
         row :user
+        # row :file, [], &(Exfile.Phoenix.Helpers.exfile_path(&1))
         # TODO exfile
       end
 

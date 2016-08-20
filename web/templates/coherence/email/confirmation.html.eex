@@ -8,7 +8,8 @@
     Your new account is almost ready. Click the link below to confirm you new account.
   </p>
   <p>
-    <a href="<%= @url %>">认证帐号 Confirm my Account</a>
+    <a href="<%= @url %>">认证帐号 Confirm my Account！</a>
   </p>
+  <p>感谢注册！</p>
   <p>Thank you!</p>
 </div>

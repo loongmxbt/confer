@@ -54,8 +54,21 @@ defmodule Confer.PaperController do
   end
 
   def show(conn, %{"id" => id}, user) do
-    paper = Repo.get!(Paper, id) |> Repo.preload(:topic)
-    render(conn, "show.html", paper: paper)
+
+    paper = Repo.get!(Paper, id)
+    if paper.user_id == user.id do
+      pid = paper.id
+      topic = Repo.get!(Topic, paper.topic_id)
+      query = from r in "reviews",
+              where: r.paper_id == ^pid,
+              select: %{status_id: r.status_id, content: r.content}
+      reviews = Repo.all(query)
+
+      render(conn, "show.html", paper: paper, topic: topic, reviews: reviews)
+    else
+      redirect conn, to: "/papers"
+    end
+
   end
 
   def edit(conn, %{"id" => id}, user) do

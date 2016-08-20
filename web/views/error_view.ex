@@ -1,8 +1,8 @@
 defmodule Confer.ErrorView do
   use Confer.Web, :view
 
-  def render("404.html", _assigns) do
-    "Page not found"
+  def render("404.html", assigns) do
+    render "not_found.html"
   end
 
   def render("500.html", _assigns) do
