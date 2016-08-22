@@ -4,6 +4,7 @@ defmodule Confer.Topic do
   schema "topics" do
     field :name, :string
     has_many :papers, Confer.Paper
+    has_many :users, Confer.User
 
     timestamps()
   end

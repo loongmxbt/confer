@@ -11,6 +11,7 @@ defmodule Confer.PageController do
     recent_posts = Repo.all(query)
     # welcome text, email, address, etc
     # Move to page view
+    welcome = Repo.get_by(Page, slug: "welcome")
 
     render(conn, "index.html", posts: recent_posts,
                                welcome: welcome)

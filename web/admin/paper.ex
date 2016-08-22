@@ -73,6 +73,7 @@ defmodule Confer.ExAdmin.Paper do
 
   def assign_paper_reviews(conn, params) do
     paper = Repo.get(Paper, params[:id])
+    topic_id = paper.topic_id
     # 已有review
     query = from r in Review, select: r.user_id, where: r.paper_id == ^paper.id
     rev_prof_ids = Repo.all(query)
@@ -80,19 +81,21 @@ defmodule Confer.ExAdmin.Paper do
     # 总共需要review
     rev_total = 3
     prof_num = rev_total - rev_num
+    if prof_num < 0 do
+      prof_num = 0
+    end
     # 分配 review_total - review_num 的 reviews
-    query = from u in User, select: u.id, where: u.role_id == 2
+    query = from u in User, select: u.id, where: u.role_id == 2 and u.topic_id == ^topic_id
     # 需要选择没有的profs
     all_prof_ids = Repo.all(query) # prof_id list
 
-    # TODO: Random
-    prof_ids = Enum.shuffle(all_prof_ids -- rev_prof_ids)
+    # prof_ids = Enum.shuffle(all_prof_ids -- rev_prof_ids)
+    prof_ids = Enum.take_random(all_prof_ids -- rev_prof_ids, prof_num)
 
 
-    for prof_id <- prof_ids, prof_num > 0 do
+    for prof_id <- prof_ids do
       Review.changeset(%Review{}, %{status_id: 1, paper_id: paper.id, user_id: prof_id})
       |> Repo.insert!
-      prof_num = prof_num - 1
     end
 
     conn
