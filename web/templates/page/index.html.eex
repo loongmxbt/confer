@@ -7,12 +7,9 @@
     <div class="content">
       <ul>
         <%= for post <- @posts do %>
-        <li><a href="<%= post_path(@conn, :show, post.id) %>"><%= post.title %></a></li>
+        <li><span class="label label-info"><%= format_date(post.inserted_at) %></span> - <a href="<%= post_path(@conn, :show, post.id) %>"><%= post.title %></a></li>
         <% end %>
-        <li>会议投稿截止日期延长至6月30日</li>
-        <li>2016中国工程热物理学会燃烧学学术年会通知（PDF文档下载）</li>
-        <li>Call for papers (for foreign attendees)（PDF Version）</li>
-        <li><a href="/posts">所有通知</a></li>
+        <li><span class="label label-info">All Notices</span> - <a href="/posts">所有通知</a></li>
       </ul>
     </div>
   </div>
@@ -27,17 +24,17 @@
     <div class="content">
       <div class="row">
         <div class="col-sm-3">
-          <img src="<%= @wechat.content %>">
+          <img src="<%= infos["wechat"] %>">
         </div>
         <div class="col-sm-9">
           <p>
-            举办地址：<%= @address.content %>
+            举办地址：<%= infos["address"] %>
           </p>
           <p>
-            联系电话：<%= @phone.content %>
+            联系电话：<%= infos["phone"] %>
           </p>
           <p>
-            官方邮箱：<%= @email.content %>
+            官方邮箱：<%= infos["email"] %>
           </p>
         </div>
       </div>

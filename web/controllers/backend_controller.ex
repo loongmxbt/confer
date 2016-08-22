@@ -22,8 +22,5 @@ defmodule Confer.BackendController do
 
   end
 
-  def assign_reviews(conn, _params) do
-    # assign paper to professors
-  end
 
 end

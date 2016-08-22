@@ -5,14 +5,14 @@
     <table class="table">
       <thead>
         <tr>
-          <th width="30%">发布日期</th>
+          <th width="25%">发布日期</th>
           <th>通知标题</th>
         </tr>
       </thead>
       <tbody>
         <%= for post <- @posts do %>
         <tr>
-          <td><%= post.inserted_at %></td>
+          <td><span class="label label-info"><%= format_date(post.inserted_at) %></span></td>
           <td><a href="<%= post_path(@conn, :show, post) %>"><%= post.title %></a></td>
         </tr>
         <% end %>

@@ -1,6 +1,12 @@
 <main class="main-content">
   <div class="widget">
-    <div class="title"><%= @post.title %></div>
+    <div class="title">
+      <%= @post.title %>
+    </div>
+    <div class="meta">
+      <strong>发布日期：</strong> <span class="label label-info"><%= format_date(@post.inserted_at) %></span>
+    </div>
+    <br>
     <div class="content">
       <%= raw @post.content %>
 

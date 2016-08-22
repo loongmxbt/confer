@@ -5,22 +5,15 @@ defmodule Confer.PageController do
 
   def index(conn, _params) do
     query = from p in Post,
-            select: %{id: p.id, title: p.title},
+            select: [:id, :title, :inserted_at],
             limit: 5,
             order_by: [desc: p.inserted_at]
     recent_posts = Repo.all(query)
     # welcome text, email, address, etc
-    welcome = Repo.get_by(Page, slug: "welcome")
-    address = Repo.get_by(Info, slug: "address")
-    phone = Repo.get_by(Info, slug: "phone")
-    email = Repo.get_by(Info, slug: "email")
-    wechat = Repo.get_by(Info, slug: "wechat")
+    # Move to page view
+
     render(conn, "index.html", posts: recent_posts,
-                               welcome: welcome,
-                               address: address,
-                               phone: phone,
-                               email: email,
-                               wechat: wechat)
+                               welcome: welcome)
   end
 
   def show(conn, %{"slug" => slug}) do

@@ -128,11 +128,11 @@ Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 3})
 
 # Posts
 Repo.delete_all Post
-Post.changeset(%Post{}, %{title: "通知1", content: "通知内容1通知内容1通知内容1"})
+Post.changeset(%Post{}, %{title: "会议投稿截止日期延长至6月30日", content: "会议投稿截止日期延长至6月30日"})
 |> Repo.insert!
-Post.changeset(%Post{}, %{title: "通知2", content: "通知内容2通知内容2通知内容2"})
+Post.changeset(%Post{}, %{title: "2016中国工程热物理学会燃烧学学术年会通知（PDF文档下载）", content: "2016中国工程热物理学会燃烧学学术年会通知（PDF文档下载）"})
 |> Repo.insert!
-Post.changeset(%Post{}, %{title: "通知3", content: "通知内容3通知内容3通知内容3"})
+Post.changeset(%Post{}, %{title: "Call for papers (for foreign attendees)（PDF Version）", content: "Call for papers (for foreign attendees)（PDF Version）"})
 |> Repo.insert!
 
 # Info
@@ -145,4 +145,10 @@ Info.changeset(%Info{}, %{name: "联系电话", slug: "phone", content: "010-888
 Info.changeset(%Info{}, %{name: "官方邮箱", slug: "email", content: "admin@thermophysics.cn"})
 |> Repo.insert!
 Info.changeset(%Info{}, %{name: "微信公众号", slug: "wechat", content: "http://placehold.it/150x150"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "主标题", slug: "header_h1", content: "2016 中国工程热物理学会·工程热物理学术年会"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "次标题", slug: "header_h2", content: "2016年10月21-23日 | 北京·华北电力大学"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "菜单标题", slug: "header_logo", content: "CNETD2016"})
 |> Repo.insert!

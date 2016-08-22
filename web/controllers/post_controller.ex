@@ -4,7 +4,10 @@ defmodule Confer.PostController do
   alias Confer.Post
 
   def index(conn, _params) do
-    posts = Repo.all(Post)
+    query = from p in Post,
+            select: [:id, :title, :inserted_at],
+            order_by: [desc: p.inserted_at]
+    posts = Repo.all(query)
     render(conn, "index.html", posts: posts)
   end
 
