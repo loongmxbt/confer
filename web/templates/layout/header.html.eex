@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-sm-12">
 
-        <h1><%= header_h1 %></h1>
-        <h2><%= header_h2 %></h2>
+        <h1><%= get_info("header_h1") %></h1>
+        <h2><%= get_info("header_h2") %></h2>
 
       </div>
 

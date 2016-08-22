@@ -80,7 +80,9 @@ defmodule Confer.ExAdmin.Paper do
     rev_num = rev_prof_ids |> Enum.count
     # 总共需要review
     rev_total = 3
+
     prof_num = rev_total - rev_num
+
     if prof_num < 0 do
       prof_num = 0
     end
