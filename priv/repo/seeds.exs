@@ -44,21 +44,56 @@ end
 
 
 # Add pages
-welcome_text = "<p>
-  伴随着火的使用，人类文明逐渐走出黑暗，迈向光明。燃烧渗透在人们日常生活的各个方面，人类对燃烧的探索也从未停止。燃烧学的发展进步，为解决能源和环境危机、开展火灾防治等提供了重要的理论指导，也为人类在能源、环境、火灾、国防及空间探索等诸多领域中的活动提供了科学依据。
-</p>
-<p>
-  随着国家自然科学基金委和其它基础研究项目的持续投入，我国在燃烧学领域的研究取得了长足进展，解决了众多科学难题。我国燃烧界具有国际影响力的专家学者队伍也在不断壮大，我国学者在国际燃烧领域权威期刊《Combustion and Flame》和《Proceedings of the Combustion Institute》上发表的论文数居世界第二位，为国际燃烧学的发展进步做出了卓越贡献。
-</p>
-<p>
-  根据中国工程热物理学会燃烧学专业委员会的安排，2016年中国工程热物理学会燃烧学学术年会将于2016年10月21-23日在安徽马鞍山举行。会议将围绕燃烧特性与层流火焰，化学反应动力学，湍流火焰和燃烧过程的数值分析，喷雾与液滴燃烧，燃烧测试与诊断技术，爆轰、爆炸和超音速燃烧，火灾科学与技术，燃烧污染物控制，煤和生物质的燃烧与气化，内燃机和燃气轮机燃烧，新型燃烧技术等11个专题开展交流，旨在展示我国燃烧领域学者的新成果，碰撞出燃烧研究的新火花，挑战遇到的新问题。大会由国家自然科学基金委工程与材料科学部工程科学三处和中国工程热物理学会燃烧学分会主办，安徽工业大学承办。会议将由大会邀请报告、专题报告、基金进展报告以及各专题的分组报告构成。
-</p>"
+welcome_text = "<p>热力学是研究热现象中，物质系统在平衡时的性质和建立能量的平衡关系，以及状态发生变化时，系统与外界相互作用的学科。
+工程热力学是热力学最先发展的一个分支，它主要研究热能与机械能和其他能量之间相互转换的规律及其应用，是机械工程的重要基础学科之一。</p>
+<p>根据中国工程热物理学会工程热力学与能源利用分会专业委员会的安排，2016年中国工程热物理学会程热力学与能源利用学术年会将于2016年11月9日-12日在广东举行。
+会议将围绕基础热力学、热力系统循环、热泵制冷空调、材料热物性和可再生能源、脱碳、储能等5个专题开展交流，旨在展示我国工程热力学与能源利用领域的新成果，碰撞出燃烧研究的新火花，挑战遇到的新问题。
+大会由国家自然科学基金委工程与材料科学部工程科学三处和中国工程热物理学会燃烧学分会主办，广东工业大学大学和中科院广州能源所承办。会议将由大会邀请报告、专题报告、基金进展报告以及各专题的分组报告构成。</p>
+<p>我们相信，通过此次工程热力学与能源利用学术会议，将会加深全国各地的研究人员的交流合作。</p>
+<p>欢迎各地研究人员参会交流！</p>"
+
+organization_text = """
+<table class="table table-striped">
+  <thead><tr><th>主任：</th><th><br></th></tr></thead>
+  <tbody><tr><td>杨勇平</td><td>华北电力大学</td></tr></tbody>
+</table>
+<table class="table table-striped">
+  <thead><tr><th>副主任：</th><th><br></th></tr></thead>
+  <tbody>
+    <tr><td>段远源<br></td><td>清华大学<br></td></tr>
+    <tr><td>李小森<br></td><td>中国科学院广州能源研究所<br></td></tr>
+    <tr><td>宋永臣<br></td><td>大连理工大学<br></td></tr>
+    <tr><td>陈林根<br></td><td>中国人民解放军海军工程大学<br></td></tr>
+    <tr><td>于达仁<br></td><td>哈尔滨工业大学<br></td></tr>
+  </tbody>
+</table>
+<table class="table table-striped">
+  <thead><tr><th>委员：</th><th><br></th></tr></thead>
+  <tbody>
+    <tr><td>陈光明<br></td><td>浙江大学<br></td></tr>
+    <tr><td>吴静怡<br></td><td>上海交通大学<br></td></tr>
+    <tr><td>何茂刚<br></td><td>西安交通大学<br></td></tr>
+    <tr><td>严俊杰<br></td><td>西安交通大学<br></td></tr>
+    <tr><td>杨昭<br></td><td>天津大学<br></td></tr>
+    <tr><td>刘朝<br></td><td>重庆大学<br></td></tr>
+    <tr><td>公茂琼<br></td><td>中国科学院理化技术研究所<br></td></tr>
+    <tr><td>郑丹星<br></td><td>北京化工大学<br></td></tr>
+    <tr><td>王永青<br></td><td>集美大学<br></td></tr>
+    <tr><td>陈颖<br></td><td>广东工业大学<br></td></tr>
+    <tr><td>张小松<br></td><td>东南大学<br></td></tr>
+    <tr><td>潘卫国<br></td><td>上海电力学院<br></td></tr>
+    <tr><td>汪建文<br></td><td>内蒙古工业大学<br></td></tr>
+  </tbody>
+</table>
+"""
+
+
 
 Repo.delete_all Page
 Page.changeset(%Page{}, %{title: "组委会致欢迎辞", slug: "welcome", content: welcome_text})
 |> Repo.insert!
 
-Page.changeset(%Page{}, %{title: "组织结构", slug: "organization", content: "content here"})
+Page.changeset(%Page{}, %{title: "组织结构", slug: "organization", content: organization_text})
 |> Repo.insert!
 
 Page.changeset(%Page{}, %{title: "重要日期", slug: "dates", content: "content here"})
