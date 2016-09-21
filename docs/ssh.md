@@ -11,3 +11,5 @@ su postgres
 psql postgres
 
 ALTER USER postgres with PASSWORD 'password'
+
+ALTER USER postgres with PASSWORD 'thermophysics'

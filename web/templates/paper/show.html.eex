@@ -12,6 +12,7 @@
         论文分类：<%= @topic.name %>
       </p>
       <p>
+        <!-- filename: @paper.filename  only english -->
         论文预览：<a href="<%= exfile_path(@paper.file) %>" target="_blank"><%= @paper.title %></a>
       </p>
       <p>

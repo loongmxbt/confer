@@ -27,6 +27,7 @@ defmodule Confer.Paper do
     |> validate_required([:title, :topic_id, :file, :user_id])
     |> validate_content_type(:file, ~w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip))
     |> cast_content_type(:file, :content_type)
-    |> cast_filename(:file, :filename) # BUG: filename not 
+    |> cast_filename(:file, :filename) # BUG: filename not
+    |> Exfile.Ecto.prepare_uploads([:file])
   end
 end

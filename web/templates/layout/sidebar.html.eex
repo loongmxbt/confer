@@ -18,11 +18,17 @@
     <div class="title">主办单位</div>
     <div class="content">
       <div class="host">
-        <img src="http://clbs.escience.cn/doc/57046872e4b039f10ac92a0d.png" height="125" width="140">
+        <img src="/images/广东工业大学.png" height="140" width="140">
+        <p>
+          广东工业大学
+        </p>
       </div>
       <div class="host">
-        <img src="http://clbs.escience.cn/doc/56ea3572e4b07669127ecbe6.png" height="125" width="140">
+        <img src="/images/中科院广州能源所.jpg" height="140" width="140">
       </div>
+      <p>
+        中科院广州能源所
+      </p>
     </div>
   </div>
 
@@ -30,7 +36,10 @@
     <div class="title">承办单位</div>
     <div class="content">
       <div class="host">
-        <img src="http://clbs.escience.cn/doc/56ea358be4b07669127ecbfd.png" height="125" width="140">
+        <img src="/images/华北电力大学.jpg" height="140" width="140">
+        <p>
+          华北电力大学
+        </p>
       </div>
     </div>
   </div>

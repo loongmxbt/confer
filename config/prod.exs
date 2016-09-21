@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :confer, Confer.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "thermophysics.cn", port: 80],
+  url: [host: "thermophysics.cn", port: 8080],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
