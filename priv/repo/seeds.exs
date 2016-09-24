@@ -145,17 +145,17 @@ Status.changeset(%Status{}, %{name: "评阅拒绝"}) |> Repo.insert!
 # |> Repo.insert!
 
 # Add reviews
-Repo.delete_all Review
-Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 2})
-|> Repo.insert!
-Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 3})
-|> Repo.insert!
-Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 4})
-|> Repo.insert!
-Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 2})
-|> Repo.insert!
-Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 3})
-|> Repo.insert!
+# Repo.delete_all Review
+# Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 2})
+# |> Repo.insert!
+# Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 3})
+# |> Repo.insert!
+# Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 4})
+# |> Repo.insert!
+# Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 2})
+# |> Repo.insert!
+# Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 3})
+# |> Repo.insert!
 
 # Posts
 Repo.delete_all Post
