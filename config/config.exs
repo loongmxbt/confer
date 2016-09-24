@@ -37,9 +37,9 @@ config :coherence,
 
 config :coherence, Confer.Coherence.Mailer,
   adapter: Swoosh.Adapters.SMTP,
-  relay: "smtp.thermodynamics.cn",
+  relay: "smtp.exmail.qq.com",
   username: "admin@thermophysics.cn",
-  password: "",
+  password: "Thermo.123",
   tls: :always,
   auth: :always,
   ssl: true # default 25, ssl 465
