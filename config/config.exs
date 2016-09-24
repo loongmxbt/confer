@@ -33,11 +33,12 @@ config :coherence,
   module: Confer,
   logged_out_url: "/",
   email_from: {"工程热物理", "admin@thermodynamics.cn"},
-  opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :confirmable, :registerable]
+  # opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :confirmable, :registerable]
+  opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable]
 
 config :coherence, Confer.Coherence.Mailer,
   adapter: Swoosh.Adapters.SMTP,
-  relay: "smtp.exmail.qq.com",
+  relay: "smtp.thermodynamics.cn",
   username: "admin@thermophysics.cn",
   password: "Thermo.123",
   tls: :always,
