@@ -37,11 +37,12 @@ config :coherence,
 
 config :coherence, Confer.Coherence.Mailer,
   adapter: Swoosh.Adapters.SMTP,
-  relay: "smtp.exmail.qq.com",
+  relay: "smtp.thermodynamics.cn",
   username: "admin@thermophysics.cn",
   password: "",
   tls: :always,
-  auth: :always
+  auth: :always,
+  ssl: true # default 25, ssl 465
   # dkim: [
   #   s: "default", d: "domain.com",
   #   private_key: {:pem_plain, File.read!("priv/keys/domain.private")}
