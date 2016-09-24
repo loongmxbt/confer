@@ -31,15 +31,15 @@ User.changeset(%User{}, %{name: "dragonszy", email: "dragonszy@163.com", passwor
 User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", password: "fbi555", password_confirmation: "fbi555", role_id: 1})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
-for i <- 1..5 do
-  User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
-  |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-end
-
-for i <- 1..20 do
-  User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
-  |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-end
+# for i <- 1..5 do
+#   User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
+#   |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+# end
+#
+# for i <- 1..20 do
+#   User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
+#   |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+# end
 
 
 
@@ -131,18 +131,18 @@ Status.changeset(%Status{}, %{name: "评阅拒绝"}) |> Repo.insert!
 # Add Papers
 # Paper record not added because file is invalid
 # docx may run into zip
-backend = Exfile.Config.get_backend("store")
-{:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Documents/elec-market.pdf"})
-
-Repo.delete_all Paper
-Paper.changeset(%Paper{}, %{title: "热力学第一定律管理员", topic_id: 1, user_id: 1, file: file})
-|> Repo.insert!
-
-Paper.changeset(%Paper{}, %{title: "热力学第二定律万有引力", topic_id: 3, user_id: 5, file: file})
-|> Repo.insert!
-
-Paper.changeset(%Paper{}, %{title: "热力学第三定律空调制冷", topic_id: 2, user_id: 6, file: file})
-|> Repo.insert!
+# backend = Exfile.Config.get_backend("store")
+# {:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Documents/elec-market.pdf"})
+#
+# Repo.delete_all Paper
+# Paper.changeset(%Paper{}, %{title: "热力学第一定律管理员", topic_id: 1, user_id: 1, file: file})
+# |> Repo.insert!
+#
+# Paper.changeset(%Paper{}, %{title: "热力学第二定律万有引力", topic_id: 3, user_id: 5, file: file})
+# |> Repo.insert!
+#
+# Paper.changeset(%Paper{}, %{title: "热力学第三定律空调制冷", topic_id: 2, user_id: 6, file: file})
+# |> Repo.insert!
 
 # Add reviews
 Repo.delete_all Review
