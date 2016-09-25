@@ -26,10 +26,12 @@ end
 # Add Users
 Repo.delete_all User
 User.changeset(%User{}, %{name: "dragonszy", email: "dragonszy@163.com", password: "szy555", password_confirmation: "szy555", role_id: 3})
-|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+|> Repo.insert!
+# |> Coherence.ControllerHelpers.confirm!
 
 User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", password: "fbi555", password_confirmation: "fbi555", role_id: 1})
-|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+|> Repo.insert!
+# |> Coherence.ControllerHelpers.confirm!
 
 # for i <- 1..5 do
 #   User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
