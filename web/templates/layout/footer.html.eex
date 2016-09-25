@@ -21,10 +21,12 @@
         <div class="widget">
           <h4 class="title">站内导航</h4>
           <div class="content tag-cloud">
-            <a href="/posts">所有通知</a>
-            <a href="/page/dates">重要日期</a>
-            <a href="/page/meeting">参会注册</a>
-            <a href="/page/travel">交通住宿</a>
+            <a href="/posts">所有通知</a> |
+            <a href="/page/organization">组织结构</a> |
+            <a href="/page/dates">重要日期</a> |
+            <a href="/page/meeting">参会注册</a> |
+            <a href="/page/travel">交通住宿</a> |
+            <a href="/page/contact">联系我们</a>
           </div>
         </div>
       </div>
@@ -33,9 +35,13 @@
         <div class="widget">
           <h4 class="title">合作伙伴</h4>
           <div class="content tag-cloud friend-links">
+            <a href="http://www.giec.ac.cn/">中科院广州能源所</a> |
+            <a href="http://www.tsinghua.edu.cn/">清华大学</a> |
+            <a href="http://www.hjgcdx.cn/">海军工程大学</a> |
+            <a href="http://www.dlut.edu.cn/">大连理工大学</a> |
+            <a href="http://www.hrbeu.edu.cn/">哈尔滨工程大学</a> |
+            <a href="http://www.gdut.edu.cn/">广东工业大学</a> |
             <a href="http://www.ncepu.edu.cn/">华北电力大学</a>
-            <a href="http://www.gdut.edu.cn/">广东工业大学</a>
-            <a href="http://www.giec.ac.cn/">中科院广州能源所</a>
           </div>
         </div></div>
       </div>
