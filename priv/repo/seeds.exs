@@ -33,15 +33,17 @@ User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", passw
 |> Repo.insert!
 # |> Coherence.ControllerHelpers.confirm!
 
-# for i <- 1..5 do
-#   User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
-#   |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-# end
-#
-# for i <- 1..20 do
-#   User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
-#   |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
-# end
+if Mix.env == :dev do
+for i <- 1..5 do
+  User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
+  |> Repo.insert!
+end
+
+for i <- 1..20 do
+  User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
+  |> Repo.insert! 
+end
+end
 
 
 
@@ -184,4 +186,6 @@ Info.changeset(%Info{}, %{name: "主标题", slug: "header_h1", content: "2016 �
 Info.changeset(%Info{}, %{name: "次标题", slug: "header_h2", content: "2016年10月21-23日 | 北京·华北电力大学"})
 |> Repo.insert!
 Info.changeset(%Info{}, %{name: "菜单标题", slug: "header_logo", content: "CNETD2016"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "欢迎图片", slug: "welcome_img", content: "http://clbs.escience.cn/doc/56e8ee73e4b07669127ddb6f.jpg"})
 |> Repo.insert!

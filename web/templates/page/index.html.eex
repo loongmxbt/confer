@@ -1,6 +1,6 @@
 <main class="main-content">
   <div class="widget">
-    <img src="http://clbs.escience.cn/doc/56e8ee73e4b07669127ddb6f.jpg" height="200" width="670">
+    <img src="<%= infos["welcome_img"] %>" height="200" width="670">
   </div>
   <div class="widget">
     <div class="title">重要通知</div>

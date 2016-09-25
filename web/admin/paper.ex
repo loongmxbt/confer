@@ -1,6 +1,7 @@
 defmodule Confer.ExAdmin.Paper do
   use ExAdmin.Register
   alias Confer.{Repo, Topic, User, Paper, Review}
+  import Exfile.Phoenix.Helpers
 
   member_action :assign_paper,  &__MODULE__.assign_paper_reviews/2
   member_action :send_paper,  &__MODULE__.send_paper_to_profs/2
@@ -39,9 +40,14 @@ defmodule Confer.ExAdmin.Paper do
         row :content_type
         row :topic
         row :user
-        # row :file, [], &(Exfile.Phoenix.Helpers.exfile_path(&1))
-        # TODO exfile
+        # Here &1 represents the paper, so we need to use &1.file
+        # https://github.com/smpallen99/ex_admin/issues/199
+        # https://github.com/keichan34/exfile/blob/7441e1b35728b9c27f486ccf023ba327ca0f5d73/test/exfile/phoenix/helpers_test.exs
+        row :file_path, &(exfile_path(&1.file))
+        row :file_url, &(exfile_url(conn, &1.file, filename: "PID#{&1.id}-CID#{&1.topic.id}"))
+
       end
+
 
       panel "Reviews" do
         table_for(paper.reviews) do

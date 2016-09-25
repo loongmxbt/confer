@@ -3,19 +3,15 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="widget">
-          <h4 class="title">最新通知</h4>
+          <h4 class="title">研究所链接</h4>
           <div class="content recent-post">
             <div class="recent-single-post">
-              <a href="/posts/3" class="post-title">会议投稿截止日期延长至6月30日</a>
-              <div class="date">2016年6月12日</div>
+              <a href="http://www.etp.ac.cn/" class="post-title">中国科学院工程热物理研究所</a>
+              <div class="date">Institute of Engineering Thermophysics</div>
             </div>
             <div class="recent-single-post">
-              <a href="/posts/2" class="post-title">2016中国工程热物理学会燃烧学学术年会通知</a>
-              <div class="date">2016年6月6日</div>
-            </div>
-            <div class="recent-single-post">
-              <a href="/posts/1/" class="post-title">Call for papers (for foreign attendees)</a>
-              <div class="date">2016年6月6日</div>
+              <a href="http://www.cset.org.cn/" class="post-title">中国工程热物理学会</a>
+              <div class="date">CSET</div>
             </div>
           </div>
         </div>
@@ -52,8 +48,8 @@
     <div class="row">
       <div class="col-sm-12">
         <span>Copyright © <a href="http://www.thermophysics.cn/">工程热物理</a></span> |
-        <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></span> |
-        <span>京公网安备11010802014853</span>
+        <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备15011708号-5</a></span> |
+        <span>中国工程热物理学术年会</span>
       </div>
     </div>
   </div>
