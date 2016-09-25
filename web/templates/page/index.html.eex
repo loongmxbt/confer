@@ -1,6 +1,6 @@
 <main class="main-content">
   <div class="widget">
-    <img src="<%= infos["welcome_img"] %>" height="200" width="670">
+    <img src="<%= infos["welcome_img"] %>" width="680">
   </div>
   <div class="widget">
     <div class="title">重要通知</div>
