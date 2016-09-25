@@ -21,8 +21,7 @@ defmodule Confer.Mixfile do
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex,
                     :coherence,
-                    :exfile,
-                    :arc_ecto]]
+                    :exfile]]
   end
 
   # Specifies which paths to compile per environment.
@@ -45,8 +44,6 @@ defmodule Confer.Mixfile do
      {:ex_admin, github: "smpallen99/ex_admin"},
     #  {:exfile, "~> 0.3.0"}]
      {:exfile, github: "keichan34/exfile"},
-     {:arc, "~> 0.5.2"},
-     {:arc_ecto, "~> 0.4.3"},
      {:ecto, "~> 2.0", override: true}]
   end
 
