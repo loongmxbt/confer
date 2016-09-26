@@ -15,8 +15,6 @@ defmodule Confer.ExAdmin.Dashboard do
               column "Email", fn(u) -> u.email end
             end
           end
-        end
-        column do
           panel "教授" do
             query = from u in User, where: u.role_id == 2
             Repo.all(query)
@@ -25,8 +23,6 @@ defmodule Confer.ExAdmin.Dashboard do
               column "Email", fn(u) -> u.email end
             end
           end
-        end
-        column do
           panel "用户统计" do
             markup_contents do
               # TODO: simplify
@@ -58,9 +54,10 @@ defmodule Confer.ExAdmin.Dashboard do
               end
             end
           end
-        end
-      end
-      columns do
+        end # end column
+
+
+
         column do
           panel "页面" do
             query = from p in Page, select: [:id, :title, :slug]
@@ -70,8 +67,6 @@ defmodule Confer.ExAdmin.Dashboard do
               column "Slug", fn(p) -> p.slug end
             end
           end
-        end
-        column do
           panel "通知" do
             query = from p in Post, select: [:id, :title, :inserted_at]
             Repo.all(query)
@@ -80,11 +75,10 @@ defmodule Confer.ExAdmin.Dashboard do
               column "Time", fn(p) -> "#{p.inserted_at}" end
             end
           end
-        end
-        column do
+
           panel "论文统计" do
             markup_contents do
-              # TODO: simplify
+              # TODO: simplify use group 
               query = from p in Paper, select: [:id], where: p.topic_id == 1
               num1 = Repo.all(query) |> Enum.count
               topic1 = Repo.get(Topic, 1).name
@@ -127,15 +121,24 @@ defmodule Confer.ExAdmin.Dashboard do
                     td "#{num5}"
                   end
                 end
-
               end
-
             end
+          end
+        end # end column
+      end # end columns
 
-
+      columns do
+        column do
+          panel "图片和文件上传" do
+            markup_contents do
+              div ".content" do
+                "文字"
+              end
+            end
           end
         end
       end
-    end
-  end
-end
+
+    end # end content
+  end # end register_page
+end # end defmodule
