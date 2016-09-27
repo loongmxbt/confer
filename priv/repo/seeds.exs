@@ -41,7 +41,7 @@ end
 
 for i <- 1..20 do
   User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
-  |> Repo.insert! 
+  |> Repo.insert!
 end
 end
 
@@ -187,5 +187,15 @@ Info.changeset(%Info{}, %{name: "次标题", slug: "header_h2", content: "2016�
 |> Repo.insert!
 Info.changeset(%Info{}, %{name: "菜单标题", slug: "header_logo", content: "CNETD2016"})
 |> Repo.insert!
+Info.changeset(%Info{}, %{name: "顶部背景图", slug: "header_bg", content: "/images/header-bg.jpg"})
+|> Repo.insert!
 Info.changeset(%Info{}, %{name: "欢迎图片", slug: "welcome_img", content: "http://clbs.escience.cn/doc/56e8ee73e4b07669127ddb6f.jpg"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "主办单位-中国工程热物理学会", slug: "host1", content: "/images/华北电力大学.jpg"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "主办单位-国家自然科学基金委", slug: "host2", content: "/images/华北电力大学.jpg"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "承办单位-广东工业大学", slug: "partner1", content: "/images/广东工业大学.png"})
+|> Repo.insert!
+Info.changeset(%Info{}, %{name: "承办单位-中科院广州能源所", slug: "partner2", content: "/images/中科院广州能源所.jpg"})
 |> Repo.insert!

@@ -10,11 +10,11 @@ defmodule Confer.PageView do
   end
 
   # infos["wechat"]
-  def infos do
-    query = from i in Info,
-            select: {i.slug, i.content}
-    infos = Repo.all(query) |> Enum.into(%{})
-  end
+  # def infos do
+  #   query = from i in Info,
+  #           select: {i.slug, i.content}
+  #   infos = Repo.all(query) |> Enum.into(%{})
+  # end
 
   # get_info("wechat")
   def get_info(slug) do

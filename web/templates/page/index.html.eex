@@ -1,6 +1,6 @@
 <main class="main-content">
   <div class="widget">
-    <img src="<%= infos["welcome_img"] %>" width="680">
+    <img src="<%= get_info("welcome_img") %>" width="680">
   </div>
   <div class="widget">
     <div class="title">重要通知</div>
@@ -24,17 +24,17 @@
     <div class="content">
       <div class="row">
         <div class="col-sm-3">
-          <img src="<%= infos["wechat"] %>">
+          <img src="<%= get_info("wechat") %>">
         </div>
         <div class="col-sm-9">
           <p>
-            举办地址：<%= infos["address"] %>
+            举办地址：<%= get_info("address") %>
           </p>
           <p>
-            联系电话：<%= infos["phone"] %>
+            联系电话：<%= get_info("phone") %>
           </p>
           <p>
-            官方邮箱：<%= infos["email"] %>
+            官方邮箱：<%= get_info("email") %>
           </p>
         </div>
       </div>

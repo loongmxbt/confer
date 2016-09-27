@@ -78,7 +78,7 @@ defmodule Confer.ExAdmin.Dashboard do
 
           panel "论文统计" do
             markup_contents do
-              # TODO: simplify use group 
+              # TODO: simplify use group
               query = from p in Paper, select: [:id], where: p.topic_id == 1
               num1 = Repo.all(query) |> Enum.count
               topic1 = Repo.get(Topic, 1).name
@@ -132,7 +132,7 @@ defmodule Confer.ExAdmin.Dashboard do
           panel "图片和文件上传" do
             markup_contents do
               div ".content" do
-                "文字"
+                "请使用图床"
               end
             end
           end

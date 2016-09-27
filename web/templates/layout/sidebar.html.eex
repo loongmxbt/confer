@@ -18,17 +18,13 @@
     <div class="title">主办单位</div>
     <div class="content">
       <div class="host">
-        <img src="/images/广东工业大学.png" height="140" width="140">
-        <p>
-          广东工业大学
-        </p>
+        <img src="<%= get_info("host1") %>" width="140">
+        <p><%= get_info("host1", "name") %></p>
       </div>
       <div class="host">
-        <img src="/images/中科院广州能源所.jpg" height="140" width="140">
+        <img src="<%= get_info("host2") %>" width="140">
+        <p><%= get_info("host2", "name") %></p>
       </div>
-      <p>
-        中科院广州能源所
-      </p>
     </div>
   </div>
 
@@ -36,10 +32,12 @@
     <div class="title">承办单位</div>
     <div class="content">
       <div class="host">
-        <img src="/images/华北电力大学.jpg" height="140" width="140">
-        <p>
-          华北电力大学
-        </p>
+        <img src="<%= get_info("partner1") %>" width="140">
+        <p><%= get_info("partner1", "name") %></p>
+      </div>
+      <div class="host">
+        <img src="<%= get_info("partner2") %>" width="140">
+        <p><%= get_info("partner2", "name") %></p>
       </div>
     </div>
   </div>

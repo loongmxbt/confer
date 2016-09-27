@@ -1,4 +1,4 @@
-<header class="main-header" style="background-image: url(/images/header-bg.jpg)">
+<header class="main-header" style='background-image: url(<%= get_info("header_bg") %>)'>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">

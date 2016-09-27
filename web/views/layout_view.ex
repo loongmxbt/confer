@@ -5,8 +5,16 @@ defmodule Confer.LayoutView do
   def get_info(slug) do
     info = Repo.get_by(Info, slug: slug)
     case info do
-      nil -> "#{slug}"
+      nil -> "#{slug}未定义"
       _   -> info.content
+    end
+  end
+
+  def get_info(slug, "name") do
+    info = Repo.get_by(Info, slug: slug)
+    case info do
+      nil -> "#{slug}未定义"
+      _   -> info.name
     end
   end
 
