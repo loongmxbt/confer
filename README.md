@@ -25,3 +25,12 @@ Academic Conference Management System
   * 文件上传 exfile --- 替换为arc
   * https
   * 部署
+  
+## Show
+![](./docs/index_page.png)
+![](./docs/paper_upload.png)
+![](./docs/paper_review.png)
+![](./docs/backend_page.png)
+![](./docs/admin_dashboard.png)
+![](./docs/admin_infos.png)
+![](./docs/admin_papers.png)
