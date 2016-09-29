@@ -1,14 +1,18 @@
 defmodule Confer.PaperView do
   use Confer.Web, :view
 
-  def full_name_ext(title, ext) do
-    case ext do
+  def full_filename(paper) do
+    title = "PID#{paper.id}-CID#{paper.topic_id}"
+    ext = paper.content_type
+
+    filename = case ext do
       "application/pdf" -> title <> ".pdf"
       "application/msword" -> title <> ".doc"
       "application/zip" -> title <> ".docx"
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" -> title <> ".docx"
       _ -> title
     end
+
   end
 
   def review_label(status_id) do

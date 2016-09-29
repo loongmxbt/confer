@@ -6,17 +6,26 @@
 
     <div class="content">
       <p>
-        论文标题：<%= @paper.title %>
+        <b>论文标题：</b><%= @paper.title %>
       </p>
       <p>
-        论文分类：<%= @topic.name %>
+        <b>论文分类：</b><%= @topic.name %>
+      </p>
+      <p>
+        <b>论文作者：</b><%= @paper.author %>
+      </p>
+      <p>
+        <b>投稿单位：</b><%= @paper.unit %> <b>单位邮编：</b><%= @paper.postcode %>
+      </p>
+      <p>
+        <b>联系人电话：</b><%= @paper.phone %>  <b>联系人邮件：</b><%= @paper.email %>
       </p>
       <p>
         <!-- filename: @paper.filename  only english -->
-        论文预览：<a href='<%= exfile_path(@paper.file, filename: "PID#{@paper.id}-CID#{@topic.id}") %>' target="_blank"><%= @paper.title %></a>
+        <b>论文预览：</b><a href='<%= exfile_path(@paper.file, filename: "PID#{@paper.id}-CID#{@topic.id}") %>' target="_blank"><%= @paper.title %></a>
       </p>
       <p>
-        评阅详情：<span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
+        <b>评阅详情：</b><span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
       </p>
       <table class="table">
         <thead>

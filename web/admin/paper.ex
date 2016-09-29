@@ -87,10 +87,15 @@ defmodule Confer.ExAdmin.Paper do
     # 总共需要review
     rev_total = 3
 
-    prof_num = rev_total - rev_num
+    # prof_num = rev_total - rev_num
+    #
+    # prof_num = if prof_num < 0 do
+    #   0
+    # end
 
-    if prof_num < 0 do
-      prof_num = 0
+    prof_num = cond do
+      rev_total - rev_num < 0 -> 0
+      true -> rev_total - rev_num
     end
     # 分配 review_total - review_num 的 reviews
     query = from u in User, select: u.id, where: u.role_id == 2 and u.topic_id == ^topic_id
