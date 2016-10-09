@@ -12,7 +12,6 @@ defmodule Confer.Paper do
     field :postcode, :string
     field :phone, :string
     field :email, :string
-    field :type, :string
     field :file, Exfile.Ecto.File
     field :content_type, :string
     field :filename, :string
