@@ -1,6 +1,11 @@
 defmodule Confer.PaperView do
   use Confer.Web, :view
 
+  @doc """
+  In paper show.html.eex
+  full_filename(paper)
+  """
+
   def full_filename(paper) do
     title = "PID#{paper.id}-CID#{paper.topic_id}"
     ext = paper.content_type
@@ -12,8 +17,18 @@ defmodule Confer.PaperView do
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" -> title <> ".docx"
       _ -> title
     end
-
   end
+
+  # def full_filename(pid, tid, ext) do
+  #   title = "PID#{pid}-CID#{tid}"
+  #   filename = case ext do
+  #     "application/pdf" -> title <> ".pdf"
+  #     "application/msword" -> title <> ".doc"
+  #     "application/zip" -> title <> ".docx"
+  #     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" -> title <> ".docx"
+  #     _ -> title
+  #   end
+  # end
 
   def review_label(status_id) do
     case status_id do

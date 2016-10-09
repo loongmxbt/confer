@@ -22,7 +22,7 @@
       </p>
       <p>
         <!-- filename: @paper.filename  only english -->
-        <b>论文预览：</b><a href='<%= exfile_path(@paper.file, filename: "PID#{@paper.id}-CID#{@topic.id}") %>' target="_blank"><%= @paper.title %></a>
+        <b>论文预览：</b><a href='<%= exfile_path(@paper.file, filename: full_filename(@paper)) %>' target="_blank"><%= @paper.title %></a>
       </p>
       <p>
         <b>评阅详情：</b><span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>

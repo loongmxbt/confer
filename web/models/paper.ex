@@ -12,6 +12,7 @@ defmodule Confer.Paper do
     field :postcode, :string
     field :phone, :string
     field :email, :string
+    field :type, :string
     field :file, Exfile.Ecto.File
     field :content_type, :string
     field :filename, :string
@@ -28,7 +29,7 @@ defmodule Confer.Paper do
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :unit, :postcode, :phone, :email])
+    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :unit, :postcode, :phone, :email, :type])
     |> validate_required([:title, :topic_id, :file, :user_id, :author, :unit, :postcode, :phone, :email])
     |> validate_content_type(:file, ~w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip))
     |> cast_content_type(:file, :content_type)

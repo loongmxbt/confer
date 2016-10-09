@@ -15,5 +15,7 @@ mix ecto.gen.migration add_user_id_to_paper
    path: "/var/folders/wl/8_mrlnx52ls04sfl1my7g7l80000gn/T//plug-1469/multipart-1787-405592-1"},
   "title" => "asdfadf", "topic_id" => "1"}
 
+mix ecto.gen.migration add_type_to_paper  初稿 终稿
+
 https://github.com/stavro/arc 274 stars
 https://github.com/keichan34/exfile 31 stars

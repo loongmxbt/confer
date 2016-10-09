@@ -15,9 +15,15 @@ defmodule Confer.ExAdmin.Paper do
       column :id
       column :title
       column :topic
+      column :author
+      column :unit
+      column :postcode
+      column :phone
+      column :email
       column :user, fields: [:name]
       actions
     end
+
 
     form paper do
       inputs do
