@@ -199,3 +199,5 @@ Info.changeset(%Info{}, %{name: "承办单位-广东工业大学", slug: "partne
 |> Repo.insert!
 Info.changeset(%Info{}, %{name: "承办单位-中科院广州能源所", slug: "partner2", content: "/images/中科院广州能源所.jpg"})
 |> Repo.insert!
+Info.changeset(%Info{}, %{name: "提交论文", slug: "paper_submit", content: "<li>初稿终稿请于同一篇文章提交！</li><li>提交终稿请选择初稿进行编辑重新上传！</li>"})
+|> Repo.insert!

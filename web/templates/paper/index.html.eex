@@ -9,6 +9,7 @@
         <li>论文标题不可重复，创建论文为新论文</li>
         <li>修改论文点击编辑，可修改标题，重新上传文件</li>
         <li>所有论文参与评阅，重复论文请删除</li>
+        <%= raw get_info("paper_submit", "") %>
       </ul>
     </div>
 
@@ -19,7 +20,6 @@
           <th>所属主题</th>
           <th>评阅状态</th>
           <th class="text-center">操作</th>
-
         </tr>
       </thead>
       <tbody>

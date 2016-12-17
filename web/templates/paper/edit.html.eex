@@ -2,6 +2,14 @@
   <div class="widget">
     <h2>编辑论文</h2>
 
+    <div class="info bg-info">
+      <ul>
+        <li>编辑论文基本信息</li>
+        <li>可以重新上传论文覆盖</li>
+        <%= raw get_info("paper_submit", "") %>
+      </ul>
+    </div>
+
     <%= render "form.html", changeset: @changeset,
     topics: @topics,
     action: paper_path(@conn, :update, @paper) %>

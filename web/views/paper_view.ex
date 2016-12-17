@@ -1,5 +1,7 @@
 defmodule Confer.PaperView do
   use Confer.Web, :view
+  alias Confer.{Repo, Info}
+  import Ecto.Query
 
   @doc """
   In paper show.html.eex
@@ -36,6 +38,22 @@ defmodule Confer.PaperView do
       2 -> "<span class=\"label label-success\"> 评阅通过 </span>"
       3 -> "<span class=\"label label-danger\"> 评阅拒绝 </span>"
       _ -> "<span class=\"label label-primary\"> 等待评阅 </span>"
+    end
+  end
+
+  def get_info(slug) do
+    info = Repo.get_by(Info, slug: slug)
+    case info do
+      nil -> "#{slug}未定义"
+      _   -> info.content
+    end
+  end
+
+  def get_info(slug, default) do
+    info = Repo.get_by(Info, slug: slug)
+    case info do
+      nil -> default
+      _   -> info.content
     end
   end
 

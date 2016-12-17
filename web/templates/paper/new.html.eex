@@ -6,6 +6,7 @@
       <ul>
         <li>上传文件格式为 .doc / .docx / .pdf</li>
         <li>上传文件大小不超过 20 MB</li>
+        <%= raw get_info("paper_submit", "") %>
       </ul>
     </div>
 

@@ -7,6 +7,9 @@ defmodule Confer.ExAdmin.Paper do
   member_action :send_paper,  &__MODULE__.send_paper_to_profs/2
 
   register_resource Confer.Paper do
+
+
+
     menu priority: 31, label: "论文"
 
     index do
@@ -23,7 +26,6 @@ defmodule Confer.ExAdmin.Paper do
       column :user, fields: [:name]
       actions
     end
-
 
     form paper do
       inputs do
@@ -80,7 +82,20 @@ defmodule Confer.ExAdmin.Paper do
       }
     end
 
+
+    csv do
+      column "ID", fn p -> "PID#{p.id}-CID#{p.topic_id}" end
+      column "Title", fn p -> p.title end
+      column "Topic", fn p -> p.topic_id end
+      column "Author", fn p -> p.author end
+      column "Unit", fn p -> p.unit end
+      column "Postcode", fn p -> p.postcode end
+      column "Phone", fn p -> p.phone end
+      column "Email", fn p -> p.email end
+    end
+
   end
+  # end register_resource
 
 
   def assign_paper_reviews(conn, params) do
