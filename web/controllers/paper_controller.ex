@@ -4,6 +4,7 @@ defmodule Confer.PaperController do
   alias Confer.Topic
   alias Confer.User
   alias Confer.Paper
+  alias Confer.Info
 
   plug :load_topics when action in [:new, :create, :edit, :update]
 

@@ -40,7 +40,19 @@
 
   </table>
 
+  <p>目前的投稿状态是：<%= paper_type %></p>
+  <%= if paper_type == "初稿" do %>
   <%= link "创建论文", to: paper_path(@conn, :new) %>
+  <% end %>
+  <%= if paper_type == "终稿" do %>
+  <p>请选择初稿，点击编辑，重新上传终稿文章。</p>
+  <% end %>
+
+  <%= if paper_type == "暂停投稿" do %>
+  <p>投稿流程已停止，请参见具体日期安排。</p>
+  <% end %>
+
+
 
 </div>
 </main>

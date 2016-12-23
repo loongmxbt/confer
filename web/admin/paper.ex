@@ -2,6 +2,7 @@ defmodule Confer.ExAdmin.Paper do
   use ExAdmin.Register
   alias Confer.{Repo, Topic, User, Paper, Review}
   import Exfile.Phoenix.Helpers
+  import Confer.PaperView, only: [ full_filename: 1 ]
 
   member_action :assign_paper,  &__MODULE__.assign_paper_reviews/2
   member_action :send_paper,  &__MODULE__.send_paper_to_profs/2
@@ -16,15 +17,14 @@ defmodule Confer.ExAdmin.Paper do
       selectable_column
 
       column :id
+      column :topic_id
       column :title
-      column :topic
       column :author
       column :unit
-      column :postcode
-      column :phone
       column :email
       column :user, fields: [:name]
       actions
+      # TODO: add action download
     end
 
     form paper do
@@ -52,7 +52,7 @@ defmodule Confer.ExAdmin.Paper do
         # https://github.com/smpallen99/ex_admin/issues/199
         # https://github.com/keichan34/exfile/blob/7441e1b35728b9c27f486ccf023ba327ca0f5d73/test/exfile/phoenix/helpers_test.exs
         row :file_path, &(exfile_path(&1.file))
-        row :file_url, &(exfile_url(conn, &1.file, filename: "PID#{&1.id}-CID#{&1.topic.id}"))
+        row :file_url, &(exfile_url(conn, &1.file, filename: full_filename(&1)))
 
       end
 
