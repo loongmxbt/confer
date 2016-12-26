@@ -34,15 +34,15 @@ User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", passw
 # |> Coherence.ControllerHelpers.confirm!
 
 if Mix.env == :dev do
-for i <- 1..5 do
-  User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
-  |> Repo.insert!
-end
+  for i <- 1..5 do
+    User.changeset(%User{}, %{name: "用户#{i}", email: "user#{i}@163.com", password: "user555", password_confirmation: "user555", role_id: 1})
+    |> Repo.insert!
+  end
 
-for i <- 1..20 do
-  User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
-  |> Repo.insert!
-end
+  for i <- 1..10 do
+    User.changeset(%User{}, %{name: "教授#{i}", email: "prof#{i}@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2, topic_id: rem(i, 5)+1 })
+    |> Repo.insert!
+  end
 end
 
 

@@ -10,7 +10,7 @@
 
       <li>
         <strong>论文标题:</strong>
-        <%= @paper.title %>
+        <a href='<%= exfile_path(@paper.file, filename: full_filename(@paper)) %>' target="_blank"><%= @paper.title %> (点击下载)</a>
       </li>
 
       <li>

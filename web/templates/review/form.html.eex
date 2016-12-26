@@ -6,20 +6,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :content, class: "control-label" %>
+    <%= label f, "评阅内容", class: "control-label" %>
     <%= textarea f, :content, class: "form-control" %>
     <%= error_tag f, :content %>
   </div>
 
   <div class="form-group">
     <%= label f, :status_id, "Status", class: "control-label" %>
-
-
-    <%= for status <- @statuses do %>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="<%= status.id %>" value="<%= status.name %>"> <%= status.name %>
-      </label>
-    <% end %>
+    <%= select f, :status_id, @statuses, class: "form-control" %>
+    <%= error_tag f, :status_id %>
   </div>
 
   <div class="form-group">

@@ -6,6 +6,8 @@ defmodule Confer.ReviewController do
   alias Confer.Paper
   alias Confer.Status
 
+  plug :load_statuses when action in [:new, :create, :edit, :update]
+
   def action(conn, _) do
     apply(__MODULE__, action_name(conn), [conn, conn.params, conn.assigns.current_user])
   end
@@ -46,10 +48,8 @@ defmodule Confer.ReviewController do
 
   def edit(conn, %{"id" => id}, user) do
     review = Repo.get!(Review, id)
-    query = from s in Status, select: {s.name, s.id}
-    statuses = Repo.all(Status)
     changeset = Review.changeset(review)
-    render(conn, "edit.html", review: review, statuses: statuses, changeset: changeset)
+    render(conn, "edit.html", review: review, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "review" => review_params}, user) do
@@ -77,6 +77,15 @@ defmodule Confer.ReviewController do
     conn
     |> put_flash(:info, "Review deleted successfully.")
     |> redirect(to: review_path(conn, :index))
+  end
+
+  defp load_statuses(conn, _) do
+    query =
+      Status
+      |> Status.order_by_id
+      |> Status.select_names_and_ids
+    statuses = Repo.all query
+    assign(conn, :statuses, statuses)
   end
 
 

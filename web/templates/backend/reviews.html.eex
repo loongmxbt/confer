@@ -16,7 +16,14 @@
       <tbody>
         <%= for paper <- @papers do %>
         <tr>
-          <td><%= paper.id %></td><td><%= paper.title %></td><td><%= paper.topic.name %></td>
+          <td><%= paper.id %></td>
+          <td><a href="/backend/admin/papers/<%= paper.id %>"><%= paper.title %></a></td>
+          <td><%= paper.topic.name %></td>
+          <%= for review <- paper.reviews do %>
+            <td>
+            <%= status_name review.status_id %>
+            </td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>

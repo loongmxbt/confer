@@ -21,8 +21,7 @@
 
         <td class="text-center">
           <%= link "显示", to: review_path(@conn, :show, review), class: "btn btn-default btn-xs" %>
-          <%= link "修改", to: review_path(@conn, :edit, review), class: "btn btn-default btn-xs" %>
-          <%= link "取消", to: review_path(@conn, :delete, review), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+          <%= link "修改", to: review_path(@conn, :edit, review), class: "btn btn-info btn-xs" %>
         </td>
       </tr>
       <% end %>

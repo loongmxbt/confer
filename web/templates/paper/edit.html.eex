@@ -10,8 +10,7 @@
       </ul>
     </div>
 
-    <%= render "form.html", changeset: @changeset,
-    topics: @topics,
+    <%= render "form.html", changeset: @changeset, topics: @topics,
     action: paper_path(@conn, :update, @paper) %>
 
     <%= link "Back", to: paper_path(@conn, :index) %>

@@ -14,7 +14,9 @@ defmodule Confer.BackendController do
             where: u.role_id == 2
     professors = Repo.all(query)
 
-    papers = Repo.all(Paper) |> Repo.preload(:topic) |> Repo.preload(:reviews)
+    papers = Repo.all(Paper)
+             |> Repo.preload(:topic)
+             |> Repo.preload(:reviews)
 
     render(conn, "reviews.html", professors: professors, papers: papers)
     # list papers
