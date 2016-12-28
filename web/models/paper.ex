@@ -33,6 +33,15 @@ defmodule Confer.Paper do
     |> validate_content_type(:file, ~w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip))
     |> cast_content_type(:file, :content_type)
     |> cast_filename(:file, :filename) # BUG: filename can't be chinese, file ext
+    |> cast_authors
     |> Exfile.Ecto.prepare_uploads([:file])
   end
+
+  defp cast_authors(changeset) do
+    author_str = get_field(changeset, :author)
+    |> to_string
+    |> String.replace(",", ";")
+    Ecto.Changeset.put_change(changeset, :author, author_str)
+  end
+
 end

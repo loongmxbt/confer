@@ -44,7 +44,7 @@
 
   <div class="form-group">
     <%= label f, "论文类别", class: "control-label" %>
-    <%= select f, :topic_id, @topics, class: "form-control" %>
+    <%= select f, :topic_id, @topics, class: "form-control", prompt: "请选择论文分类" %>
     <%= error_tag f, :topic_id %>
   </div>
 
