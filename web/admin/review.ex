@@ -7,7 +7,7 @@ defmodule Confer.ExAdmin.Review do
 
     form review do
       inputs do
-        input review, :paper, collection: Repo.all(Paper)
+        input review, :paper, collection: Repo.all(Paper), fields: [:id, :title]
         input review, :user, collection: Repo.all(from u in User, where: u.role_id == 2)
         input review, :status, collection: Repo.all(Status)
         input review, :content
