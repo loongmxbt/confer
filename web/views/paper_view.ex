@@ -58,7 +58,9 @@ defmodule Confer.PaperView do
   end
 
   def paper_type do
-    paper_type = case Repo.get_by(Info, slug: "paper_type").content do
+    info = Repo.get_by(Info, slug: "paper_type") || %Info{content: ""}
+
+    case info.content do
       "初稿" -> "初稿"
       "终稿" -> "终稿"
       _     -> "暂停投稿"
