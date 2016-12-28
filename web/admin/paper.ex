@@ -54,6 +54,7 @@ defmodule Confer.ExAdmin.Paper do
         row :id
         row :title
         row :author
+        row :keyword
         row :unit
         row :postcode
         row :phone
@@ -102,6 +103,7 @@ defmodule Confer.ExAdmin.Paper do
       column "Title", fn p -> p.title end
       column "Topic", fn p -> p.topic_id end
       column "Author", fn p -> p.author end
+      column "Keyword", fn p -> p.keyword end
       column "Unit", fn p -> p.unit end
       column "Postcode", fn p -> p.postcode end
       column "Phone", fn p -> p.phone end

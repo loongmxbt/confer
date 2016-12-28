@@ -8,6 +8,7 @@ defmodule Confer.Paper do
   schema "papers" do
     field :title, :string
     field :author, :string
+    field :keyword, :string
     field :unit, :string
     field :postcode, :string
     field :phone, :string
@@ -28,8 +29,8 @@ defmodule Confer.Paper do
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :unit, :postcode, :phone, :email])
-    |> validate_required([:title, :topic_id, :file, :user_id, :author, :unit, :postcode, :phone, :email])
+    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :keyword, :unit, :postcode, :phone, :email])
+    |> validate_required([:title, :topic_id, :file, :user_id, :author, :keyword, :unit, :postcode, :phone, :email])
     |> validate_content_type(:file, ~w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip))
     |> cast_content_type(:file, :content_type)
     |> cast_filename(:file, :filename) # BUG: filename can't be chinese, file ext
@@ -42,6 +43,13 @@ defmodule Confer.Paper do
     |> to_string
     |> String.replace(",", ";")
     Ecto.Changeset.put_change(changeset, :author, author_str)
+  end
+
+  defp cast_keywords(changeset) do
+    keyword_str = get_field(changeset, :keyword)
+    |> to_string
+    |> String.replace(",", ";")
+    Ecto.Changeset.put_change(changeset, :keyword, keyword_str)
   end
 
 end

@@ -29,3 +29,21 @@ user role 为教授，可以在自己的页面里看到我的评阅
 backend 只为admin服务，可以分配论文评阅，看到全局的论文评阅情况
 
 也就是说教授并没有backend的权限
+
+
+评阅意见 删除
+<table class="table">
+  <thead>
+    <tr><th width="20%">评阅意见</th><th>内容详情</th></tr>
+  </thead>
+  <tbody>
+    <%= for review <- @reviews do %>
+    <tr>
+      <th><%= raw review_label(review.status_id) %></th>
+      <td>
+        <%= review.content %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

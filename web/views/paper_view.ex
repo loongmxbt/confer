@@ -59,7 +59,7 @@ defmodule Confer.PaperView do
 
   def paper_type do
     info = Repo.get_by(Info, slug: "paper_type") || %Info{content: ""}
-
+    # BUG: paper_type not defined error
     case info.content do
       "初稿" -> "初稿"
       "终稿" -> "终稿"

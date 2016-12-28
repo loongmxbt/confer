@@ -27,21 +27,7 @@
       <p>
         <b>评阅详情：</b><span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
       </p>
-      <table class="table">
-        <thead>
-          <tr><th width="20%">评阅意见</th><th>内容详情</th></tr>
-        </thead>
-        <tbody>
-          <%= for review <- @reviews do %>
-          <tr>
-            <th><%= raw review_label(review.status_id) %></th>
-            <td>
-              <%= review.content %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      
     </div>
 
     <%= link "编辑", to: paper_path(@conn, :edit, @paper) %>

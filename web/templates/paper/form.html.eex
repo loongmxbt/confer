@@ -19,6 +19,12 @@
   </div>
 
   <div class="form-group">
+    <label class="control-label">关键词（请用分号隔开）</label>
+    <%= text_input f, :keyword, class: "form-control" %>
+    <%= error_tag f, :keyword %>
+  </div>
+
+  <div class="form-group">
     <%= label f, "投稿单位", class: "control-label" %>
     <%= text_input f, :unit, class: "form-control" %>
     <%= error_tag f, :unit %>
