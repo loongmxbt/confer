@@ -23,9 +23,18 @@ defmodule Confer.ExAdmin.Paper do
       column :unit
       column :email
       column :user, fields: [:name]
+      column "Download", fn(p) ->
+        filename = full_filename(p)
+        file_url = exfile_url(conn, p.file, filename: filename)
+        raw "<a href=#{file_url} target=_blank >#{filename}</a>"
+      end
+
       actions
       # TODO: add action download
+
     end
+
+
 
     form paper do
       inputs do
@@ -44,6 +53,11 @@ defmodule Confer.ExAdmin.Paper do
       attributes_table do
         row :id
         row :title
+        row :author
+        row :unit
+        row :postcode
+        row :phone
+        row :email
         row :filename
         row :content_type
         row :topic
