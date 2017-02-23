@@ -24,7 +24,7 @@
     <div class="content">
       <div class="row">
         <div class="col-sm-3">
-          <img src="<%= get_info("wechat") %>">
+          <img src="<%= get_info("wechat") %>" width="120px">
         </div>
         <div class="col-sm-9">
           <p>
