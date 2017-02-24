@@ -45,7 +45,8 @@ defmodule Confer.Mixfile do
     #  {:exfile, "~> 0.3.0"}]
      {:exfile, github: "keichan34/exfile", override: true},
      {:exfile_imagemagick, "~> 0.1.2"},
-     {:ecto, "~> 2.0", override: true}]
+     {:ecto, "~> 2.0", override: true},
+     {:distillery, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

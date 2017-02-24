@@ -14,7 +14,9 @@ use Mix.Config
 config :confer, Confer.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "www.thermophysics.cn", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  root: ".",
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
