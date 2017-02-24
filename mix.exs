@@ -20,7 +20,7 @@ defmodule Confer.Mixfile do
     [mod: {Confer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex,
-                    :coherence, :ex_admin, :gen_smtp, :csvlixir, :exactor, :inflex, :scrivener_ecto,
+                    :coherence, :ex_admin, :gen_smtp, :csvlixir, :exactor, :inflex, :scrivener_ecto, :scrivener,
                     :exfile, :exfile_imagemagick]]
   end
 
