@@ -37,17 +37,9 @@ config :coherence,
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable]
 
 config :coherence, Confer.Coherence.Mailer,
-  adapter: Swoosh.Adapters.SMTP,
-  relay: "smtp.thermodynamics.cn",
-  username: "admin@thermophysics.cn",
-  password: "",
-  tls: :always,
-  auth: :always,
-  ssl: true # default 25, ssl 465
-  # dkim: [
-  #   s: "default", d: "domain.com",
-  #   private_key: {:pem_plain, File.read!("priv/keys/domain.private")}
-  # ]
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: "key-167fd849a64ece4e9263aac7e7a51640",
+  domain: "mg.thermophysics.cn"
 
 # %% End Coherence Configuration %%
 
