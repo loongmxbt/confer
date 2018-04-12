@@ -20,7 +20,7 @@ defmodule Confer.Mixfile do
     [mod: {Confer, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex,
-                    :coherence, :ex_admin, :gen_smtp, :csvlixir, :exactor, :inflex, :scrivener_ecto, :scrivener,
+                    :coherence, :ex_admin,
                     :exfile, :exfile_imagemagick]]
   end
 
@@ -38,15 +38,15 @@ defmodule Confer.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:gettext, "~> 0.11"},
+     {:gettext, "~> 0.13.1"},
      {:cowboy, "~> 1.0"},
-     {:coherence, "~> 0.1"},
-     {:ex_admin, github: "smpallen99/ex_admin"},
-    #  {:exfile, "~> 0.3.0"}]
-     {:exfile, github: "keichan34/exfile", override: true},
+     {:coherence, "~> 0.4.0"},
+     {:ex_admin, "~> 0.8"},
+     {:exfile, "~> 0.3.0"},
      {:exfile_imagemagick, "~> 0.1.2"},
      {:ecto, "~> 2.0", override: true},
-     {:distillery, "~> 1.0"}]
+     {:distillery, "~> 1.5", runtime: false},
+     {:bootleg, "~> 0.7", runtime: false}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
