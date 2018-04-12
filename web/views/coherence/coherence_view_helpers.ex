@@ -3,28 +3,61 @@ defmodule Confer.Coherence.ViewHelpers do
   Helper functions for Coherence Views.
   """
   use Phoenix.HTML
-  import Confer.Gettext
   alias Coherence.Config
+  import Confer.Gettext
 
   @seperator {:safe, "&nbsp; | &nbsp;"}
-  @helpers Module.concat(Application.get_env(:coherence, :module), Router.Helpers)
+  @helpers Confer.Router.Helpers
 
-  @recover_link  gettext("Forget Password?")
-  @unlock_link   gettext("Send Unlock Email")
-  @register_link gettext("Need Registration?")
-  @invite_link   gettext("Invite")
-  @signin_link   gettext("Login")
-  @signout_link  gettext("Logout")
+  @recover_link  dgettext("coherence", "Forgot your password?")
+  @unlock_link   dgettext("coherence", "Send an unlock email")
+  @register_link dgettext("coherence", "Need An Account?")
+  @invite_link   dgettext("coherence", "Invite Someone")
+  @confirm_link  dgettext("coherence", "Resend confirmation email")
+  @signin_link   dgettext("coherence", "Sign In")
+  @signout_link  dgettext("coherence", "Sign Out")
 
   @doc """
   Create coherence template links.
 
-  Generates links if the appropriate option is installed.
+  Generates links if the appropriate option is installed. This function
+  can be used to:
+
+  * create links for the new session page `:new_session`
+  * create links for your layout template `:layout`
+
+
+  Defaults are provided based on the options configured for Coherence.
+  However, the defaults can be overridden by passing the following options.
+
+  ## Customize the links
+
+  ### :new_session Options
+
+  * :recover - customize the recover link (#{@recover_link})
+  * :unlock - customize the unlock link (#{@unlock_link})
+  * :register - customize the register link (#{@register_link})
+  * :confirm - customize the confirm link (#{@confirm_link})
+
+  ### :layout Options
+
+  * :list_tag - customize the list tag (:li)
+  * :signout_class - customize the class on the signout link ("navbar-form")
+  * :signin - customize the signin link text (#{@signin_link})
+  * :signout - customize the signout link text (#{@signout_link})
+  * :register - customize the register link text (#{@register_link})
+
+  ### Disable links
+
+  If you set an option to false, the link will not be shown. For example, to
+  disable the register link on the layout, use the following in your layout template:
+
+      coherence_links(conn, :layout, register: false)
 
   ## Examples
 
       coherence_links(conn, :new_session)
-      Generates: #{@recover_link}  #{@unlock_link} #{@register_link}
+      Generates: #{@recover_link}  #{@unlock_link} #{@register_link} #{@confirm_link}
 
       coherence_links(conn, :new_session, recover: "Password reset", register: false
       Generates: Password reset  #{@unlock_link}
@@ -34,19 +67,20 @@ defmodule Confer.Coherence.ViewHelpers do
 
       coherence_links(conn, :layout)             # when not logged in
       Generates: #{@register_link}  #{@signin_link}
-
   """
   def coherence_links(conn, which, opts \\ [])
   def coherence_links(conn, :new_session, opts) do
-    recover?  = Keyword.get opts, :recover, @recover_link
-    unlock?   = Keyword.get opts, :unlock, @unlock_link
-    register? = Keyword.get opts, :register, @register_link
+    recover_link  = Keyword.get opts, :recover, @recover_link
+    unlock_link   = Keyword.get opts, :unlock, @unlock_link
+    register_link = Keyword.get opts, :register, @register_link
+    confirm_link  = Keyword.get opts, :confirm, @confirm_link
 
     user_schema = Coherence.Config.user_schema
     [
-      recover_link(conn, user_schema, recover?),
-      unlock_link(conn, user_schema, unlock?),
-      register_link(conn, user_schema, register?)
+      recover_link(conn, user_schema, recover_link),
+      unlock_link(conn, user_schema, unlock_link),
+      register_link(conn, user_schema, register_link),
+      confirmation_link(conn, user_schema, confirm_link)
     ]
     |> List.flatten
     |> concat([])
@@ -62,9 +96,8 @@ defmodule Confer.Coherence.ViewHelpers do
     if Coherence.logged_in?(conn) do
       current_user = Coherence.current_user(conn)
       [
-        content_tag(list_tag, current_user.name),
-        content_tag(list_tag,
-          link(signout, to: coherence_path(@helpers, :session_path, conn, :delete, current_user), method: :delete, class: signout_class))
+        content_tag(list_tag, profile_link(current_user, conn)),
+        content_tag(list_tag, signout_link(conn, signout, signout_class))
       ]
     else
       signin_link = content_tag(list_tag, link(signin, to: coherence_path(@helpers, :session_path, conn, :new)))
@@ -115,6 +148,18 @@ defmodule Confer.Coherence.ViewHelpers do
     link text, to: coherence_path(@helpers, :invitation_path, conn, :new)
   end
 
+  def signout_link(conn, text \\ @signout_link, signout_class \\ "") do
+    link(text, to: coherence_path(@helpers, :session_path, conn, :delete), method: :delete, class: signout_class)
+  end
+
+  def confirmation_link(_conn, _user_schema, false), do: []
+  def confirmation_link(conn, user_schema, text) do
+    if user_schema.confirmable?, do: [confirmation_link(conn, text)], else: []
+  end
+  def confirmation_link(conn, text \\ @confirm_link) do
+    link(text, to: coherence_path(@helpers, :confirmation_path, conn, :new))
+  end
+
   def required_label(f, name, opts \\ []) do
     label f, name, opts do
       [
@@ -124,4 +169,11 @@ defmodule Confer.Coherence.ViewHelpers do
     end
   end
 
+  defp profile_link(current_user, conn) do
+    if Config.user_schema.registerable? do
+      link current_user.name, to: coherence_path(@helpers, :registration_path, conn, :show)
+    else
+      current_user.name
+    end
+  end
 end

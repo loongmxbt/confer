@@ -31,16 +31,16 @@ config :coherence,
   user_schema: Confer.User,
   repo: Confer.Repo,
   module: Confer,
+  router: Confer.Router,
+  messages_backend: Confer.Coherence.Messages,
   logged_out_url: "/",
-  email_from: {"工程热物理", "admin@thermodynamics.cn"},
-  # opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :confirmable, :registerable]
+  email_from_name: "工程热物理",
+  email_from_email: "admin@thermodynamics.cn",
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable]
 
 config :coherence, Confer.Coherence.Mailer,
-  adapter: Swoosh.Adapters.Mailgun,
-  api_key: "key-167fd849a64ece4e9263aac7e7a51640",
-  domain: "mg.thermophysics.cn"
-
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: "your api key here"
 # %% End Coherence Configuration %%
 
 # Gettext i18n
@@ -77,3 +77,5 @@ config :exfile, Exfile,
       directory: Path.expand("./uploads/cache")
     }
   }
+
+

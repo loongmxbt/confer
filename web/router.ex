@@ -20,7 +20,7 @@ defmodule Confer.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Coherence.Authentication.Session, login: true
+    plug Coherence.Authentication.Session, protected: true
   end
 
   pipeline :auth_admin do
@@ -42,7 +42,7 @@ defmodule Confer.Router do
   # Coherence
   scope "/" do
     pipe_through :browser
-    coherence_routes
+    coherence_routes()
   end
 
   scope "/" do

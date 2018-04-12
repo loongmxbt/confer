@@ -1,15 +1,11 @@
 <div>
-  <p>您好 <%= @name %>!<p>
-  <p>Hello <%= @name %>!<p>
+  <p><%= dgettext "coherence", "Hello %{name}!", name: @name %><p>
   <p>
-    您的账户已经准备就绪，点击下方链接完成认证！
+    <%= dgettext "coherence", "Your new account is almost ready. Click the link below to confirm you new account." %>
   </p>
   <p>
-    Your new account is almost ready. Click the link below to confirm you new account.
+    <a href="<%= @url %>"><%= dgettext "coherence", "Confirm my Account" %></a>
   </p>
-  <p>
-    <a href="<%= @url %>">认证帐号 Confirm my Account！</a>
-  </p>
-  <p>感谢注册！</p>
-  <p>Thank you!</p>
+  <p><%= dgettext "coherence", "Thank you!" %></p>
 </div>
+
