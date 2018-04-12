@@ -5,29 +5,35 @@
     </div>
 
     <div class="content">
-      <p>
-        <b>论文标题：</b><%= @paper.title %>
-      </p>
-      <p>
-        <b>论文分类：</b><%= @topic.name %>
-      </p>
-      <p>
-        <b>论文作者：</b><%= @paper.author %>
-      </p>
-      <p>
-        <b>投稿单位：</b><%= @paper.unit %> <b>单位邮编：</b><%= @paper.postcode %>
-      </p>
-      <p>
-        <b>联系人电话：</b><%= @paper.phone %>  <b>联系人邮件：</b><%= @paper.email %>
-      </p>
+      <p><b>论文标题：</b><%= @paper.title %></p>
+      <p><b>论文分类：</b><%= @topic.name %></p>
+      <p><b>论文作者：</b><%= @paper.author %></p>
+      <p><b>投稿单位：</b><%= @paper.unit %> </p>
+      <p><b>单位邮编：</b><%= @paper.postcode %></p>
+      <p><b>联系人电话：</b><%= @paper.phone %>  <b>联系人邮件：</b><%= @paper.email %></p>
       <p>
         <!-- filename: @paper.filename  only english -->
         <b>论文预览：</b><a href='<%= exfile_path(@paper.file, filename: full_filename(@paper)) %>' target="_blank"><%= @paper.title %></a>
       </p>
-      <p>
-        <b>评阅详情：</b><span class="label label-success">Pass</span> - <span class="label label-primary">Waiting</span> - <span class="label label-warning">Denied</span>
-      </p>
-      
+      <p><b>综合评阅结果：</b>  <%= @status.name %></p>
+
+      <table class="table">
+      <caption>评阅详情：</caption>
+      <thead>
+        <tr>
+          <th width="20%">评阅结果</th>
+          <th>评阅内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for review <- @reviews do %>
+        <tr>
+          <td><%= raw(review_label(review.status_id)) %></td>
+          <td><%= review.content %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
     </div>
 
     <%= link "编辑", to: paper_path(@conn, :edit, @paper) %>

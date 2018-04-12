@@ -27,7 +27,7 @@
       <tr>
         <td><%= paper.title %></td>
         <td><%= paper.topic.name %></td>
-        <td>正在评阅</td>
+        <td><%= paper.status.name %></td>
 
         <td class="text-center">
           <%= link "显示", to: paper_path(@conn, :show, paper), class: "btn btn-default btn-xs" %>

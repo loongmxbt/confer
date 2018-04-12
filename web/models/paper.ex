@@ -18,6 +18,7 @@ defmodule Confer.Paper do
     field :filename, :string
     belongs_to :topic, Confer.Topic
     belongs_to :user, Confer.User
+    belongs_to :status, Confer.Status
     has_many :reviews, Confer.Review
 
     timestamps()
@@ -29,7 +30,7 @@ defmodule Confer.Paper do
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :keyword, :unit, :postcode, :phone, :email])
+    |> cast(params, [:title, :file, :topic_id, :user_id, :content_type, :filename, :author, :keyword, :unit, :postcode, :phone, :email, :status_id])
     |> validate_required([:title, :topic_id, :file, :user_id, :author, :keyword, :unit, :postcode, :phone, :email])
     |> validate_content_type(:file, ~w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip))
     |> cast_content_type(:file, :content_type)

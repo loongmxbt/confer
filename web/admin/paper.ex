@@ -1,6 +1,6 @@
 defmodule Confer.ExAdmin.Paper do
   use ExAdmin.Register
-  alias Confer.{Repo, Topic, User, Paper, Review}
+  alias Confer.{Repo, Topic, User, Paper, Review, Status}
   import Exfile.Phoenix.Helpers
   import Confer.PaperView, only: [ full_filename: 1 ]
 
@@ -18,6 +18,7 @@ defmodule Confer.ExAdmin.Paper do
 
       column :id
       column :topic_id
+      column :status_id
       column :title
       column :author
       column :unit
@@ -40,6 +41,7 @@ defmodule Confer.ExAdmin.Paper do
       inputs do
         input paper, :title
         input paper, :topic, collection: Repo.all(Topic)
+        input paper, :status, collection: Repo.all(Status)
       end
 
       # inputs "Reviews" do
@@ -62,6 +64,7 @@ defmodule Confer.ExAdmin.Paper do
         row :filename
         row :content_type
         row :topic
+        row :status
         row :user
         # Here &1 represents the paper, so we need to use &1.file
         # https://github.com/smpallen99/ex_admin/issues/199
@@ -93,7 +96,7 @@ defmodule Confer.ExAdmin.Paper do
 
     query do
       %{
-        all: [preload: [:topic, :user, reviews: [:status, :user]]]
+        all: [preload: [:topic, :user, :status, reviews: [:status, :user]]]
       }
     end
 

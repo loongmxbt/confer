@@ -5,6 +5,7 @@ defmodule Confer.PaperController do
   alias Confer.User
   alias Confer.Paper
   alias Confer.Info
+  alias Confer.Status
 
   plug :load_topics when action in [:new, :create, :edit, :update]
 
@@ -23,7 +24,7 @@ defmodule Confer.PaperController do
     # papers = Repo.all(from p in Paper,
     #                   preload: [topic: ^topics_query, user: ^users_query])
 
-    papers = Repo.all(user_papers(user)) |> Repo.preload(:topic)
+    papers = Repo.all(user_papers(user)) |> Repo.preload(:topic) |> Repo.preload(:status)
 
     # IO.inspect papers
     render(conn, "index.html", papers: papers)
@@ -60,12 +61,13 @@ defmodule Confer.PaperController do
     if paper.user_id == user.id do
       pid = paper.id
       topic = Repo.get!(Topic, paper.topic_id)
+      status = Repo.get!(Status, paper.status_id)
       query = from r in "reviews",
               where: r.paper_id == ^pid,
               select: %{status_id: r.status_id, content: r.content}
       reviews = Repo.all(query)
 
-      render(conn, "show.html", paper: paper, topic: topic, reviews: reviews)
+      render(conn, "show.html", paper: paper, topic: topic, reviews: reviews, status: status)
     else
       redirect conn, to: "/papers"
     end
